@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbqqdupnvapvi"]
+
+[ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eeg2j"]
+
+[node name="World3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_eeg2j")
+
+[node name="Player" parent="." instance=ExtResource("1_3xj3b")]
