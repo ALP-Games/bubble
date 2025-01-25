@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://6jvwfkatpm71"]
+
+[ext_resource type="FontFile" uid="uid://c68t1vy53qcar" path="res://UI/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf" id="1_80i4k"]
+
+[resource]
+resource_name = "EvalNum"
+font = ExtResource("1_80i4k")
+font_size = 14
+font_color = Color(1, 0.575333, 0.51, 1)

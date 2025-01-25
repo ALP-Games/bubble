@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8bmfd2hy7x7g"]
+[gd_scene load_steps=6 format=3 uid="uid://c8bmfd2hy7x7g"]
 
 [ext_resource type="Script" path="res://Scripts/stock_graph.gd" id="1_6jq88"]
 [ext_resource type="LabelSettings" path="res://UI/bigtext_stock_ui.tres" id="1_nihkq"]
 [ext_resource type="Script" path="res://Scripts/stock_ui.gd" id="1_pvf3b"]
-[ext_resource type="LabelSettings" path="res://UI/smalltext_stock_ui.tres" id="3_6odb4"]
+[ext_resource type="LabelSettings" uid="uid://domfgk04wfyk7" path="res://UI/smalltext_stock_ui.tres" id="3_6odb4"]
+[ext_resource type="LabelSettings" path="res://UI/EvalNum_stock_ui.tres" id="5_h3tyf"]
 
 [node name="StockUI" type="Control"]
 layout_mode = 3
@@ -109,13 +110,13 @@ vertical_alignment = 1
 [node name="UnitsPerTransactionLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Evaluation"
-label_settings = ExtResource("3_6odb4")
+label_settings = ExtResource("5_h3tyf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UnitsPerTransactionNumber" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "20"
-label_settings = ExtResource("3_6odb4")
+label_settings = ExtResource("5_h3tyf")
 horizontal_alignment = 1
 vertical_alignment = 1
