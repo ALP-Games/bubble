@@ -1,8 +1,13 @@
 class_name Gameplay
 extends Node
 
+signal capital_changed(int)
+
 # Stock Name and Target monitor
-@export var starting_capital: int = 100000000
+@export var capital: int = 100000000:
+	set(value):
+		capital = value
+		capital_changed.emit(capital)
 @export var stock_configuration: Dictionary
 @export var tick_delay: float = 1.0
 
