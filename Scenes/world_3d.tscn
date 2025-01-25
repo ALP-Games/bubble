@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="4_y6it0"]
 [ext_resource type="PackedScene" uid="uid://34j6e0axy8ra" path="res://Assets/Holder.glb" id="5_p7uno"]
 [ext_resource type="PackedScene" uid="uid://d2cjy2u4jgo1k" path="res://Assets/Stool.glb" id="6_majp8"]
-[ext_resource type="PackedScene" uid="uid://brbrjqlc1hwc6" path="res://Assets/Bubble.glb" id="7_8e5xf"]
+[ext_resource type="PackedScene" uid="uid://calth4cl3mwxl" path="res://Assets/Bubble.glb" id="7_8e5xf"]
 
 [sub_resource type="Gradient" id="Gradient_w4xwo"]
 colors = PackedColorArray(0.00077429, 0.0137135, 0.021352, 1, 0.695969, 0.97672, 0.738921, 1)

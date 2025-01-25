@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StockSimulated" load_steps=2 format=3 uid="uid://bw1qdx02yck3g"]
+
+[ext_resource type="Script" path="res://Scripts/stock_simulated.gd" id="1_33bcb"]
+
+[resource]
+script = ExtResource("1_33bcb")
+name = &"Detcla"
+earnings = 10.0
+_earnings_growth = 0.1
+_earnings_decline = 0.05
+overevaluation_bias = 30.0
+stock_price = 100
+_price_growth = 2
+_price_decline = 1
