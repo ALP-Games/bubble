@@ -1,10 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=19 format=4 uid="uid://ddri64sk3ke7j"]
 
-[ext_resource type="Texture2D" uid="uid://5kplq8o4lw7k" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
+[ext_resource type="Texture2D" uid="uid://ds58qc0bmg6sl" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
 [ext_resource type="Script" path="res://Scripts/monitor.gd" id="1_6i2me"]
-[ext_resource type="Texture2D" uid="uid://c2hsaxiftafrm" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
+[ext_resource type="Texture2D" uid="uid://xjog2kjllf0d" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
 [ext_resource type="PackedScene" uid="uid://c8bmfd2hy7x7g" path="res://UI/stock_ui.tscn" id="3_e8ho8"]
-[ext_resource type="Texture2D" uid="uid://dw0u12cqddo8p" path="res://Assets/sCREENrOUGH.png" id="4_i3wgj"]
+[ext_resource type="Texture2D" uid="uid://p8if0ncdwll6" path="res://Assets/sCREENrOUGH.png" id="4_i3wgj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kwfs"]
 resource_name = "Cube.006"
@@ -198,6 +198,5 @@ skeleton = NodePath("")
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(640, 480)
-size_2d_override = Vector2i(1385, 895)
 
 [node name="StockUI" parent="SubViewport" instance=ExtResource("3_e8ho8")]

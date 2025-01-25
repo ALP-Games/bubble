@@ -20,6 +20,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if _stock_ref == null:
+		return
 	stock_ui.set_stock_history(_stock_ref.price_history)
 	stock_ui.set_stock_buy_price(_stock_ref.buy_price)
 	stock_ui.set_stock_sell_price(_stock_ref.sell_price)
