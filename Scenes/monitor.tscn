@@ -89,6 +89,13 @@ _data = {
 "Red_Press": SubResource("Animation_4eeip")
 }
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_8k1ix"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpoqp"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_8k1ix")
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_xjnio"]
 viewport_path = NodePath("SubViewport")
 
@@ -177,10 +184,13 @@ libraries = {
 [node name="Screen2" type="Node3D" parent="."]
 
 [node name="Screen" type="MeshInstance3D" parent="Screen2"]
+material_override = SubResource("StandardMaterial3D_hpoqp")
 mesh = SubResource("ArrayMesh_rkt8l")
 skeleton = NodePath("")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1152, 864)
+transparent_bg = true
+size = Vector2i(640, 480)
+size_2d_override = Vector2i(1385, 895)
 
 [node name="StockUI" parent="SubViewport" instance=ExtResource("3_e8ho8")]

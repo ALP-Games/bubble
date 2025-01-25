@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dwlpcwpu6qu0o"]
+
+[ext_resource type="SystemFont" path=""C:\Users\user\Documents\GitHub\bubble\UI\vgaoem.fon"" id="1_ui617"]
+
+[resource]
+resource_name = "Labeltext"
+font = ExtResource("1_ui617")
+font_size = 30

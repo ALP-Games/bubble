@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://lmn6504622a5"]
+
+[ext_resource type="FontFile" uid="uid://c68t1vy53qcar" path="res://UI/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf" id="1_c86sx"]
+
+[resource]
+resource_name = "Labeltext"
+line_spacing = 1.0
+font = ExtResource("1_c86sx")
+font_size = 42
+font_color = Color(0.805, 1, 0.74, 1)
