@@ -1,6 +1,6 @@
 extends Panel
 
-@export var stock_update_delay := 1.0
+@export var stock_update_delay := 0.5
 var stock_update_elapsed := 0.0
 
 var stock_prices := [100, 110, 120, 115, 130, 125, 140]
