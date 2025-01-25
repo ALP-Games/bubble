@@ -5,4 +5,5 @@
 [resource]
 resource_name = "Labeltext"
 font = ExtResource("1_x8q6d")
+font_size = 14
 font_color = Color(0.803922, 1, 0.741176, 1)

@@ -23,6 +23,7 @@ spacing_glyph = 10
 
 [node name="GUI in 3D" parent="." instance=ExtResource("1_qr44k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98908, 3.055, -0.00825927)
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_3xj3b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56947, 3.29699, 0.103128)
