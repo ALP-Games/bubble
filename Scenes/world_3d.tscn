@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
 [ext_resource type="PackedScene" uid="uid://ft1r5f8t8lve" path="res://Scenes/gui_in_3d.tscn" id="1_qr44k"]
 [ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
+[ext_resource type="PackedScene" uid="uid://c8bmfd2hy7x7g" path="res://UI/stock_ui.tscn" id="3_5y687"]
 
 [sub_resource type="Environment" id="Environment_j4f23"]
 background_mode = 1
@@ -24,3 +25,5 @@ environment = SubResource("Environment_j4f23")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(-0.102044, 0.449002, -0.887685, 0.473427, 0.806729, 0.353631, 0.874902, -0.384168, -0.294892, -3.31199, 3.19832, 1.17216)
+
+[node name="StockUI" parent="." instance=ExtResource("3_5y687")]
