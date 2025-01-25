@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=13 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
 [ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
 [ext_resource type="PackedScene" uid="uid://ddri64sk3ke7j" path="res://Scenes/monitor.tscn" id="3_qc2cn"]
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="4_y6it0"]
 [ext_resource type="PackedScene" uid="uid://34j6e0axy8ra" path="res://Assets/Holder.glb" id="5_p7uno"]
-[ext_resource type="Resource" uid="uid://bw1qdx02yck3g" path="res://Resources/Bobing.tres" id="5_u8gkb"]
 [ext_resource type="PackedScene" uid="uid://d2cjy2u4jgo1k" path="res://Assets/Stool.glb" id="6_majp8"]
-[ext_resource type="PackedScene" uid="uid://calth4cl3mwxl" path="res://Assets/Bubble.glb" id="7_8e5xf"]
+[ext_resource type="PackedScene" uid="uid://sc2th3gla85p" path="res://Assets/Bubble.glb" id="7_8e5xf"]
+[ext_resource type="PackedScene" uid="uid://unsxiuqofssi" path="res://Assets/Pipe00.glb" id="8_f0jjb"]
+[ext_resource type="PackedScene" uid="uid://sut1eilakdws" path="res://Assets/Pipe01.glb" id="9_42xta"]
 
 [sub_resource type="Gradient" id="Gradient_w4xwo"]
 colors = PackedColorArray(0.00077429, 0.0137135, 0.021352, 1, 0.695969, 0.97672, 0.738921, 1)
@@ -53,7 +54,7 @@ shadow_bias = 0.005
 omni_range = 4.7376
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39253, -2.34433, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13695, -2.34433, 0)
 light_color = Color(0.805976, 0.337253, 0.390133, 1)
 light_energy = 30.0
 light_size = 1.0
@@ -64,14 +65,6 @@ omni_range = 5.71116
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.944844, 4.05408, 0)
 light_color = Color(0.209546, 0.573684, 0.600443, 1)
 light_energy = 5.0
-light_size = 1.0
-light_specular = 0.0
-omni_range = 5.71116
-
-[node name="OmniLight3D7" type="OmniLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3033, 6.68717, 0)
-light_color = Color(0.491128, 0.522, 0.510571, 1)
-light_energy = 16.0
 light_size = 1.0
 light_specular = 0.0
 omni_range = 5.71116
@@ -97,10 +90,7 @@ transform = Transform3D(0.590037, -0.411065, 0.694897, 0.57163, 0.820511, -6.755
 [node name="Gameplay" type="Node" parent="."]
 script = ExtResource("4_y6it0")
 stock_configuration = {
-"Bobing": {
-"Monitor": NodePath("../Monitor"),
-"Stock": ExtResource("5_u8gkb")
-}
+"Bobing": NodePath("../Monitor")
 }
 
 [node name="Holder2" parent="." instance=ExtResource("5_p7uno")]
@@ -122,10 +112,45 @@ spot_range = 9.26549
 spot_angle = 57.1541
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(0.80764, -0.160424, -0.567434, 0.569294, 0.462937, 0.679407, 0.153693, -0.871753, 0.465215, -0.417594, 5.88034, 2.28348)
+transform = Transform3D(0.80764, -0.160424, -0.567434, 0.569294, 0.462937, 0.679407, 0.153693, -0.871753, 0.465215, 0.194099, 6.33851, 1.8933)
 light_color = Color(0.0509804, 0.337255, 0.372549, 1)
 light_energy = 5.364
 light_volumetric_fog_energy = 0.0
 light_specular = 2.439
 spot_range = 9.6345
 spot_angle = 71.6652
+
+[node name="BG" type="Node3D" parent="."]
+
+[node name="Pipe002" parent="BG" instance=ExtResource("8_f0jjb")]
+transform = Transform3D(-0.974691, 0, -0.223556, 0, 1, 0, 0.223556, 0, -0.974691, 3.75463, 0, 4.75649)
+
+[node name="Pipe003" parent="BG" instance=ExtResource("8_f0jjb")]
+transform = Transform3D(-0.603709, 0, 0.797205, 0, 1, 0, -0.797205, 0, -0.603709, -0.884614, 4.22622, 1.76793)
+
+[node name="Pipe012" parent="BG" instance=ExtResource("9_42xta")]
+transform = Transform3D(0.992732, 0, -0.120345, 0, 1, 0, 0.120345, 0, 0.992732, 2.29707, 0, -3.98383)
+
+[node name="Pipe018" parent="BG" instance=ExtResource("9_42xta")]
+transform = Transform3D(1.86294, 0, -0.162396, 0, 1.87, 0, 0.162396, 0, 1.86294, 0.304299, -23.7744, -2.4174)
+
+[node name="Pipe015" parent="BG" instance=ExtResource("9_42xta")]
+transform = Transform3D(-0.397228, 0, -0.91772, 0, 1, 0, 0.91772, 0, -0.397228, 1.24226, -5.19265, -1.03044)
+
+[node name="Pipe013" parent="BG" instance=ExtResource("9_42xta")]
+transform = Transform3D(0.705266, 0, -0.708943, 0, 1, 0, 0.708943, 0, 0.705266, 4.40678, 4.42916, -3.43493)
+
+[node name="Pipe014" parent="BG" instance=ExtResource("9_42xta")]
+transform = Transform3D(0.705266, 0, -0.708943, 0, 1, 0, 0.708943, 0, 0.705266, 4.38937, 4.42916, 3.70925)
+
+[node name="Pipe004" parent="BG" instance=ExtResource("8_f0jjb")]
+transform = Transform3D(-0.0374635, 0, 0.999298, 0, 1, 0, -0.999298, 0, -0.0374635, 0.669342, 0, 2.64519)
+
+[node name="Pipe016" parent="BG" instance=ExtResource("9_42xta")]
+transform = Transform3D(-0.828256, 0, -0.56035, 0, 1, 0, 0.56035, 0, -0.828256, 1.5795, 4.42916, 3.46446)
+
+[node name="Pipe005" parent="BG" instance=ExtResource("8_f0jjb")]
+transform = Transform3D(0.998291, 0, -0.0584352, 0, 1, 0, 0.0584352, 0, 0.998291, -1.38586, 0, -0.966799)
+
+[node name="Pipe017" parent="BG" instance=ExtResource("9_42xta")]
+transform = Transform3D(-0.478431, 0, 0.878125, 0, 1, 0, -0.878125, 0, -0.478431, -2.28855, 4.42916, -0.139307)
