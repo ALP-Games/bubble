@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cdjyyw2uixi1j"]
+
+[ext_resource type="FontFile" uid="uid://tbmis5f3sjql" path="res://UI/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf" id="1_ucmfa"]
+
+[resource]
+resource_name = "Labeltext"
+font = ExtResource("1_ucmfa")
+font_size = 14

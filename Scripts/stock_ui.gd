@@ -6,6 +6,7 @@ extends Control
 
 @onready var buy_price_number := $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/BuyPriceNumber
 @onready var sell_price_number := $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/SellPriceNumber
+@onready var units_owned_number := $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/UnitsOwnedNumber
 @onready var evaluation := $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/UnitsPerTransactionNumber
 
 var currency_format := "%s$"
@@ -25,6 +26,10 @@ func set_stock_buy_price(price: int) -> void:
 
 func set_stock_sell_price(price: int) -> void:
 	sell_price_number.text = currency_format % price
+
+
+func set_units_owned(units: int) -> void:
+	units_owned_number.text = str(units)
 
 
 func set_evaluation(eval: float) -> void:

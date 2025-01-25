@@ -1,6 +1,6 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cu54wi3rownp1"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://yni72q0ygr5s"]
 
-[ext_resource type="FontFile" uid="uid://bvv8k6t3hb230" path="res://UI/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf" id="1_x8q6d"]
+[ext_resource type="FontFile" uid="uid://tbmis5f3sjql" path="res://UI/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf" id="1_x8q6d"]
 
 [resource]
 resource_name = "Labeltext"

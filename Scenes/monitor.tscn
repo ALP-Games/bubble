@@ -1,15 +1,20 @@
-[gd_scene load_steps=17 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=18 format=4 uid="uid://ddri64sk3ke7j"]
 
-[ext_resource type="Texture2D" uid="uid://csh22hmv1ou1m" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
+[ext_resource type="Texture2D" uid="uid://bcray7u8p6vxm" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
 [ext_resource type="Script" path="res://Scripts/monitor.gd" id="1_6i2me"]
-[ext_resource type="Texture2D" uid="uid://dtb1efk1ks4jm" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
+[ext_resource type="Texture2D" uid="uid://cyd2ed1dxlj5s" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
 [ext_resource type="PackedScene" uid="uid://c8bmfd2hy7x7g" path="res://UI/stock_ui.tscn" id="3_e8ho8"]
-[ext_resource type="Texture2D" uid="uid://bw1fxmkmhhsd8" path="res://Assets/sCREENrOUGH.png" id="4_i3wgj"]
+[ext_resource type="Texture2D" uid="uid://botq4x6jsasxm" path="res://Assets/sCREENrOUGH.png" id="4_i3wgj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1epx"]
+size = Vector3(1.59668, 1.14062, 1.6377)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kwfs"]
 resource_name = "Cube.006"
 cull_mode = 2
 albedo_texture = ExtResource("1_4gx2q")
+metallic_texture = ExtResource("2_hd7o4")
+metallic_texture_channel = 2
 roughness_texture = ExtResource("2_hd7o4")
 roughness_texture_channel = 1
 texture_filter = 0
@@ -143,8 +148,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_28tfp")
 
-[node name="Monitor" type="Node3D"]
+[node name="Monitor" type="StaticBody3D"]
 script = ExtResource("1_6i2me")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29834, 0.00510526, 0)
+shape = SubResource("BoxShape3D_f1epx")
 
 [node name="MonitorRig2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.846104, -0.789113, 0.359336)

@@ -27,6 +27,7 @@ var stocks: Array[StockSimulated] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	game_manager.gameplay_instance = self
 	var initial_owned_stocks: Dictionary
 	for key in stock_configuration:
 		var configuration := stock_configuration[key] as Dictionary

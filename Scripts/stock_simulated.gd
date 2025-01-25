@@ -20,6 +20,8 @@ var MAX_HISTORY := 20
 @export var _price_growth: float = 2
 @export var _price_decline: float = 1
 
+var stock_owned: int = 0
+
 var buy_price: int
 var sell_price: int
 
@@ -53,3 +55,17 @@ func update() -> void:
 	evaluation = stock_price / earnings
 	if evaluation > overevaluation_bias:
 		_state = State.RUPTURE
+
+
+func buy_stock(capital: int) -> int:
+	if capital > buy_price:
+		capital -= buy_price
+		stock_owned += 1
+	return capital
+
+
+func sell_stock(capital: int) -> int:
+	if stock_owned > 0:
+		stock_owned -= 1
+		capital += sell_price
+	return capital

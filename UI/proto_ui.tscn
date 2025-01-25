@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://donrfe5ihf054"]
+[gd_scene load_steps=3 format=3 uid="uid://ctp5q71h5fr3u"]
 
 [ext_resource type="LabelSettings" uid="uid://52cs4c1j4hxf" path="res://UI/bigtext_stock_ui.tres" id="1_k6hnn"]
 [ext_resource type="Script" path="res://Scripts/proto_ui.gd" id="1_q3m12"]
