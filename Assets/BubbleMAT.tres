@@ -11,6 +11,6 @@ clearcoat_roughness = 1.0
 anisotropy = -0.09
 subsurf_scatter_strength = 0.85
 backlight_enabled = true
-backlight = Color(0.00836062, 0.0912991, 1.20327e-08, 1)
+backlight = Color(0.143639, 0.265876, 0.183382, 1)
 refraction_enabled = true
 refraction_scale = 0.0
