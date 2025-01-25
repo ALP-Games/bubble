@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8bmfd2hy7x7g"]
+[gd_scene load_steps=4 format=3 uid="uid://c8bmfd2hy7x7g"]
+
+[ext_resource type="Script" path="res://Scripts/stock_graph.gd" id="1_6jq88"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1n20y"]
 font_size = 50
@@ -38,9 +40,10 @@ text = "Detcla"
 label_settings = SubResource("LabelSettings_1n20y")
 horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer2"]
+[node name="StockGraph" type="Panel" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("1_6jq88")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
