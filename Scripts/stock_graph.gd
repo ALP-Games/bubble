@@ -3,7 +3,7 @@ extends Panel
 @export var stock_update_delay := 0.25
 var stock_update_elapsed := 0.0
 
-var stock_prices : Array[int] = [0, 1]
+var stock_prices : Array[float] = [0, 1]
 var max_points := 20  # Maximum points on the graph
 
 
@@ -30,13 +30,14 @@ func _process(delta):
 func _draw():
 	# Calculate graph size and draw
 	var graph_size = get_rect().size
-	var min_price = 0
-	var max_price = stock_prices.max()
+	var min_price: float = stock_prices.min()
+	var max_price: float = stock_prices.max()
 	var points = []
 
 	for i in range(stock_prices.size()):
 		var x = graph_size.x * (i / float(stock_prices.size() - 1))
-		var y = graph_size.y * (1 - ((stock_prices[i] - min_price) / (max_price - min_price)))
+		var some_calc := (1.0 - ((stock_prices[i] - min_price) / (max_price - min_price))) as float
+		var y = graph_size.y * some_calc
 		points.append(Vector2(x, y))
 	
 	draw_polyline(points, Color(0, 1, 0), 2)  # Green line

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8bmfd2hy7x7g"]
 
 [ext_resource type="Script" path="res://Scripts/stock_graph.gd" id="1_6jq88"]
-[ext_resource type="LabelSettings" uid="uid://lmn6504622a5" path="res://UI/bigtext_stock_ui.tres" id="1_nihkq"]
+[ext_resource type="LabelSettings" path="res://UI/bigtext_stock_ui.tres" id="1_nihkq"]
 [ext_resource type="Script" path="res://Scripts/stock_ui.gd" id="1_pvf3b"]
-[ext_resource type="LabelSettings" uid="uid://domfgk04wfyk7" path="res://UI/smalltext_stock_ui.tres" id="3_6odb4"]
+[ext_resource type="LabelSettings" path="res://UI/smalltext_stock_ui.tres" id="3_6odb4"]
 
 [node name="StockUI" type="Control"]
 layout_mode = 3

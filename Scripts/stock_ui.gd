@@ -12,7 +12,7 @@ func set_stock_name(name: StringName) -> void:
 	stock_name_label.text = name
 
 
-func set_stock_history(history: Array[int]) -> void:
+func set_stock_history(history: Array[float]) -> void:
 	stock_graph.stock_prices = history
 
 
