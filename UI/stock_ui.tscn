@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8bmfd2hy7x7g"]
 
 [ext_resource type="Script" path="res://Scripts/stock_graph.gd" id="1_6jq88"]
-[ext_resource type="LabelSettings" path="res://UI/bigtext_stock_ui.tres" id="1_nihkq"]
+[ext_resource type="LabelSettings" uid="uid://52cs4c1j4hxf" path="res://UI/bigtext_stock_ui.tres" id="1_nihkq"]
 [ext_resource type="Script" path="res://Scripts/stock_ui.gd" id="1_pvf3b"]
-[ext_resource type="LabelSettings" uid="uid://domfgk04wfyk7" path="res://UI/smalltext_stock_ui.tres" id="3_6odb4"]
-[ext_resource type="LabelSettings" path="res://UI/EvalNum_stock_ui.tres" id="5_h3tyf"]
+[ext_resource type="LabelSettings" uid="uid://yni72q0ygr5s" path="res://UI/smalltext_stock_ui.tres" id="3_6odb4"]
+[ext_resource type="LabelSettings" uid="uid://b0dx03d83mmp7" path="res://UI/EvalNum_stock_ui.tres" id="5_h3tyf"]
 
 [node name="StockUI" type="Control"]
 layout_mode = 3

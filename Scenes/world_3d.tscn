@@ -1,14 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=19 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
 [ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
 [ext_resource type="PackedScene" uid="uid://ddri64sk3ke7j" path="res://Scenes/monitor.tscn" id="3_qc2cn"]
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="4_y6it0"]
 [ext_resource type="PackedScene" uid="uid://34j6e0axy8ra" path="res://Assets/Holder.glb" id="5_p7uno"]
+[ext_resource type="Resource" uid="uid://bw1qdx02yck3g" path="res://Resources/Bobing.tres" id="5_u8gkb"]
+[ext_resource type="Resource" path="res://Resources/ActualChina.tres" id="6_5oa5g"]
 [ext_resource type="PackedScene" uid="uid://d2cjy2u4jgo1k" path="res://Assets/Stool.glb" id="6_majp8"]
-[ext_resource type="PackedScene" uid="uid://sc2th3gla85p" path="res://Assets/Bubble.glb" id="7_8e5xf"]
-[ext_resource type="PackedScene" uid="uid://unsxiuqofssi" path="res://Assets/Pipe00.glb" id="8_f0jjb"]
-[ext_resource type="PackedScene" uid="uid://sut1eilakdws" path="res://Assets/Pipe01.glb" id="9_42xta"]
+[ext_resource type="PackedScene" uid="uid://calth4cl3mwxl" path="res://Assets/Bubble.glb" id="7_8e5xf"]
+[ext_resource type="Resource" path="res://Resources/Infra.tres" id="7_474sp"]
+[ext_resource type="Resource" path="res://Resources/SawBladez.tres" id="8_aas88"]
+[ext_resource type="PackedScene" uid="uid://by68ig0dwacgk" path="res://Assets/Pipe00.glb" id="8_f0jjb"]
+[ext_resource type="PackedScene" uid="uid://dx08vllvivlyf" path="res://Assets/Pipe01.glb" id="9_42xta"]
+[ext_resource type="Resource" path="res://Resources/Shlamantese.tres" id="9_m5au0"]
+[ext_resource type="Resource" path="res://Resources/Blood.tres" id="10_6m4jd"]
 
 [sub_resource type="Gradient" id="Gradient_w4xwo"]
 colors = PackedColorArray(0.00077429, 0.0137135, 0.021352, 1, 0.695969, 0.97672, 0.738921, 1)
@@ -90,7 +96,30 @@ transform = Transform3D(0.590037, -0.411065, 0.694897, 0.57163, 0.820511, -6.755
 [node name="Gameplay" type="Node" parent="."]
 script = ExtResource("4_y6it0")
 stock_configuration = {
-"Bobing": NodePath("../Monitor")
+"Actual China": {
+"Monitor": NodePath("../Monitor2"),
+"Stock": ExtResource("6_5oa5g")
+},
+"Big Pharma": {
+"Monitor": NodePath("../Monitor6"),
+"Stock": ExtResource("10_6m4jd")
+},
+"Bobing": {
+"Monitor": NodePath("../Monitor"),
+"Stock": ExtResource("5_u8gkb")
+},
+"Infra": {
+"Monitor": NodePath("../Monitor3"),
+"Stock": ExtResource("7_474sp")
+},
+"Saw Bladez": {
+"Monitor": NodePath("../Monitor4"),
+"Stock": ExtResource("8_aas88")
+},
+"Shlamantese": {
+"Monitor": NodePath("../Monitor5"),
+"Stock": ExtResource("9_m5au0")
+}
 }
 
 [node name="Holder2" parent="." instance=ExtResource("5_p7uno")]
