@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfduokpwwu1bk"
-path.s3tc="res://.godot/imported/MonitorRig_Ucupaint Cube.png-e8c3385165de7bbb8c2838e7a5c907e5.s3tc.ctex"
+uid="uid://bdoemfwxa2t8b"
+path.s3tc="res://.godot/imported/MonitorRig_Ucupaint Cube_1.png-7cf0e6a6b82d536703da5bfdbce859bf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bf0d9727bc732df1311d32638efb2e75"
+"md5": "1183731790ab4a0d7af0176516184fe5"
 }
 
 [deps]
 
-source_file="res://Assets/MonitorRig_Ucupaint Cube.png"
-dest_files=["res://.godot/imported/MonitorRig_Ucupaint Cube.png-e8c3385165de7bbb8c2838e7a5c907e5.s3tc.ctex"]
+source_file="res://Assets/MonitorRig_Ucupaint Cube_1.png"
+dest_files=["res://.godot/imported/MonitorRig_Ucupaint Cube_1.png-7cf0e6a6b82d536703da5bfdbce859bf.s3tc.ctex"]
 
 [params]
 
