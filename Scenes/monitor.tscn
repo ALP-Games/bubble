@@ -181,6 +181,7 @@ mesh = SubResource("ArrayMesh_rkt8l")
 skeleton = NodePath("")
 
 [node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
 size = Vector2i(640, 480)
 size_2d_override = Vector2i(1385, 895)
 
