@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=15 format=4 uid="uid://ddri64sk3ke7j"]
 
 [ext_resource type="Texture2D" uid="uid://bcray7u8p6vxm" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
 [ext_resource type="Texture2D" uid="uid://cyd2ed1dxlj5s" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
@@ -91,9 +91,14 @@ _data = {
 [sub_resource type="ViewportTexture" id="ViewportTexture_xjnio"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_lhl0j"]
+viewport_path = NodePath("SubViewport")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyums"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_xjnio")
+roughness = 0.1
+emission_texture = SubResource("ViewportTexture_lhl0j")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_28tfp"]
 _surfaces = [{
@@ -110,6 +115,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rkt8l"]
+resource_local_to_scene = true
 resource_name = "Screen_Cube_008"
 _surfaces = [{
 "aabb": AABB(-1.09878, -0.574977, -0.804013, 0.21818, 1.14995, 1.60803),
