@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5kujqv4hnicy"]
+
+[ext_resource type="PackedScene" uid="uid://bm5sf5gen7ylq" path="res://Assets/Counters/Clock.glb" id="1_p5enr"]
+[ext_resource type="PackedScene" uid="uid://dhjeihvg81ebd" path="res://Assets/Counters/Months.glb" id="2_q2dlo"]
+[ext_resource type="PackedScene" uid="uid://7qk30u7bfb5j" path="res://Assets/Counters/Numbers.glb" id="3_dtxxp"]
+
+[node name="Clock2" instance=ExtResource("1_p5enr")]
+
+[node name="Months2" parent="Clock" index="0" instance=ExtResource("2_q2dlo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.11504)
+
+[node name="Numbers2" parent="Clock" index="1" instance=ExtResource("3_dtxxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.579292)
+
+[node name="Numbers3" parent="Clock" index="2" instance=ExtResource("3_dtxxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.436396)
+
+[node name="Numbers4" parent="Clock" index="3" instance=ExtResource("3_dtxxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.291746)
+
+[node name="Numbers5" parent="Clock" index="4" instance=ExtResource("3_dtxxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14908)
