@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbqqdupnvapvi"]
+
+[ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
+[ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
+[ext_resource type="PackedScene" uid="uid://ddri64sk3ke7j" path="res://Scenes/monitor.tscn" id="3_qc2cn"]
+
+[sub_resource type="Environment" id="Environment_j4f23"]
+background_mode = 1
+background_color = Color(0.226707, 0.226707, 0.226707, 1)
+ambient_light_color = Color(0.622082, 0.264741, 0.561545, 1)
+
+[node name="World3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_3xj3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41919, 3.29699, 0)
+
+[node name="Blockout" parent="." instance=ExtResource("2_dmqej")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j4f23")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.102044, 0.449002, -0.887685, 0.473427, 0.806729, 0.353631, 0.874902, -0.384168, -0.294892, -3.31199, 3.19832, 1.17216)
+
+[node name="Monitor" parent="." instance=ExtResource("3_qc2cn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46673, 3.22242, 0.156736)

@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8bmfd2hy7x7g"]
+
+[ext_resource type="Script" path="res://Scripts/stock_graph.gd" id="1_6jq88"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1n20y"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbicm"]
+font_size = 50
+
+[node name="StockUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StockNameContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer2/StockNameContainer"]
+layout_mode = 2
+
+[node name="StockName" type="Label" parent="HBoxContainer/VBoxContainer2/StockNameContainer"]
+layout_mode = 2
+text = "Detcla"
+label_settings = SubResource("LabelSettings_1n20y")
+horizontal_alignment = 1
+
+[node name="StockGraph" type="Panel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("1_6jq88")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BuyPriceLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Buy Price:"
+label_settings = SubResource("LabelSettings_wbicm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyPriceNumber" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "300"
+label_settings = SubResource("LabelSettings_wbicm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SellPriceLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sell Price:"
+label_settings = SubResource("LabelSettings_wbicm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SellPriceNumber" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "200"
+label_settings = SubResource("LabelSettings_wbicm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnitsOwnedLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Units Owned:"
+label_settings = SubResource("LabelSettings_wbicm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnitsOwnedNumber" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "104"
+label_settings = SubResource("LabelSettings_wbicm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnitsPerTransactionLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Per Transaction:"
+label_settings = SubResource("LabelSettings_wbicm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnitsPerTransactionNumber" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_wbicm")
+horizontal_alignment = 1
+vertical_alignment = 1
