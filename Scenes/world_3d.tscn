@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=5 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
+[ext_resource type="PackedScene" uid="uid://ft1r5f8t8lve" path="res://Scenes/gui_in_3d.tscn" id="1_qr44k"]
 [ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
 
 [sub_resource type="Environment" id="Environment_j4f23"]
@@ -10,8 +11,11 @@ ambient_light_color = Color(0.622082, 0.264741, 0.561545, 1)
 
 [node name="World3D" type="Node3D"]
 
+[node name="GUI in 3D" parent="." instance=ExtResource("1_qr44k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98908, 3.055, -0.00825927)
+
 [node name="Player" parent="." instance=ExtResource("1_3xj3b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41919, 3.29699, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56947, 3.29699, 0.103128)
 
 [node name="Blockout" parent="." instance=ExtResource("2_dmqej")]
 
