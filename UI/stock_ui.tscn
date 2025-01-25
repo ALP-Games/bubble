@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8bmfd2hy7x7g"]
+[gd_scene load_steps=5 format=3 uid="uid://c8bmfd2hy7x7g"]
 
 [ext_resource type="Script" path="res://Scripts/stock_graph.gd" id="1_6jq88"]
+[ext_resource type="Script" path="res://Scripts/stock_ui.gd" id="1_pvf3b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1n20y"]
 font_size = 50
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pvf3b")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

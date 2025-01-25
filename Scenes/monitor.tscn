@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=16 format=4 uid="uid://ddri64sk3ke7j"]
 
 [ext_resource type="Texture2D" uid="uid://bcray7u8p6vxm" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
+[ext_resource type="Script" path="res://Scripts/monitor.gd" id="1_6i2me"]
 [ext_resource type="Texture2D" uid="uid://cyd2ed1dxlj5s" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
 [ext_resource type="PackedScene" uid="uid://c8bmfd2hy7x7g" path="res://UI/stock_ui.tscn" id="3_e8ho8"]
 
@@ -134,6 +135,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_28tfp")
 
 [node name="Monitor" type="Node3D"]
+script = ExtResource("1_6i2me")
 
 [node name="MonitorRig2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.846104, -0.789113, 0.359336)
