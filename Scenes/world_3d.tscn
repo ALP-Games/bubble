@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=21 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
 [ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://curfcj1smanx5" path="res://Assets/Pipe01.glb" id="9_42xta"]
 [ext_resource type="Resource" uid="uid://5awjv0rwuusw" path="res://Resources/Shlamantese.tres" id="9_m5au0"]
 [ext_resource type="Resource" uid="uid://bdadi8yidmb6j" path="res://Resources/Blood.tres" id="10_6m4jd"]
+[ext_resource type="PackedScene" uid="uid://b5kujqv4hnicy" path="res://Scenes/clock.tscn" id="16_7cqld"]
+[ext_resource type="PackedScene" uid="uid://b2i2dwhdua7w5" path="res://Assets/Counters/MoneyCounter.glb" id="17_ds6j3"]
 
 [sub_resource type="Gradient" id="Gradient_w4xwo"]
 colors = PackedColorArray(0.00077429, 0.0137135, 0.021352, 1, 0.695969, 0.97672, 0.738921, 1)
@@ -190,3 +192,9 @@ transform = Transform3D(0.998291, 0, -0.0584352, 0, 1, 0, 0.0584352, 0, 0.998291
 
 [node name="Pipe017" parent="BG" instance=ExtResource("9_42xta")]
 transform = Transform3D(-0.478431, 0, 0.878125, 0, 1, 0, -0.878125, 0, -0.478431, -2.28855, 4.42916, -0.139307)
+
+[node name="Clock2" parent="." instance=ExtResource("16_7cqld")]
+transform = Transform3D(0.87998, 0.204049, 0.428951, -0.225886, 0.974154, -1.40478e-10, -0.417864, -0.0968941, 0.903328, 4.54143, 1.75716, -1.4917)
+
+[node name="MoneyCounter2" parent="." instance=ExtResource("17_ds6j3")]
+transform = Transform3D(0.880462, 0.319314, -0.350464, -0.34405, 0.938909, -0.00889347, 0.326214, 0.128408, 0.936534, 4.56883, 1.80145, 0.799381)
