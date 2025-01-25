@@ -18,10 +18,10 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -79,6 +79,7 @@ vertical_alignment = 1
 
 [node name="SellPriceLabel" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Sell Price:"
 label_settings = ExtResource("3_6odb4")
@@ -95,6 +96,7 @@ vertical_alignment = 1
 
 [node name="UnitsOwnedLabel" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Units Owned:"
 label_settings = ExtResource("3_6odb4")

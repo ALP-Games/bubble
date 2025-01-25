@@ -71,7 +71,7 @@ mouse_force_pass_scroll_events = false
 theme_override_fonts/normal_font = SubResource("FontVariation_tyelc")
 theme_override_font_sizes/normal_font_size = 41
 bbcode_enabled = true
-text = "8888886888"
+text = "8888786888"
 scroll_active = false
 
 [node name="Monitor" parent="." instance=ExtResource("3_qc2cn")]
