@@ -1,33 +1,92 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=9 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
 [ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
 [ext_resource type="PackedScene" uid="uid://ddri64sk3ke7j" path="res://Scenes/monitor.tscn" id="3_qc2cn"]
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="4_y6it0"]
+[ext_resource type="PackedScene" uid="uid://34j6e0axy8ra" path="res://Assets/Holder.glb" id="5_p7uno"]
+[ext_resource type="PackedScene" uid="uid://d2cjy2u4jgo1k" path="res://Assets/Stool.glb" id="6_majp8"]
+[ext_resource type="PackedScene" uid="uid://sc2th3gla85p" path="res://Assets/Bubble.glb" id="7_8e5xf"]
 
 [sub_resource type="Environment" id="Environment_j4f23"]
 background_mode = 1
-background_color = Color(0.226707, 0.226707, 0.226707, 1)
-ambient_light_color = Color(0.622082, 0.264741, 0.561545, 1)
+tonemap_mode = 1
+tonemap_exposure = 0.49
+glow_intensity = 1.22
+glow_strength = 0.92
+adjustment_enabled = true
+adjustment_brightness = 1.17
+adjustment_contrast = 1.17
+adjustment_saturation = 1.59
 
 [node name="World3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_3xj3b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41919, 3.29699, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41919, 2.91376, 0)
 
 [node name="Blockout" parent="." instance=ExtResource("2_dmqej")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_j4f23")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.102044, 0.449002, -0.887685, 0.473427, 0.806729, 0.353631, 0.874902, -0.384168, -0.294892, -3.31199, 3.19832, 1.17216)
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86723, 6.44204, 0)
+omni_range = 4.7376
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38315, 3.98603, 0)
+light_energy = 2.132
+light_specular = 0.485
+shadow_enabled = true
+shadow_bias = 0.005
+omni_range = 4.7376
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41405, -3.33037, 0)
+light_color = Color(0.954532, 0, 0.216902, 1)
+light_energy = 4.718
+light_specular = 0.485
+shadow_enabled = true
+shadow_bias = 0.005
+omni_range = 10.2923
 
 [node name="Monitor" parent="." instance=ExtResource("3_qc2cn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47977, 3.22242, 0.0161226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.525, 3.222, 0)
+
+[node name="Monitor2" parent="." instance=ExtResource("3_qc2cn")]
+transform = Transform3D(0.820511, -0.57163, 0, 0.57163, 0.820511, 0, 0, 0, 1, 4.79538, 5.23609, 0)
+
+[node name="Monitor3" parent="." instance=ExtResource("3_qc2cn")]
+transform = Transform3D(0.842791, 0, -0.538241, 0, 1, 0, 0.538241, 0, 0.842791, 4.61184, 3.222, 2.7073)
+
+[node name="Monitor4" parent="." instance=ExtResource("3_qc2cn")]
+transform = Transform3D(0.691519, -0.481765, -0.538242, 0.57163, 0.820511, -4.4994e-08, 0.441633, -0.307675, 0.842791, 3.99692, 5.23609, 2.31459)
+
+[node name="Monitor5" parent="." instance=ExtResource("3_qc2cn")]
+transform = Transform3D(0.719109, 0, 0.694897, 0, 1, 0, -0.694897, 0, 0.719109, 4.3287, 3.222, -2.85177)
+
+[node name="Monitor6" parent="." instance=ExtResource("3_qc2cn")]
+transform = Transform3D(0.590037, -0.411065, 0.694897, 0.57163, 0.820511, -6.75542e-08, -0.570171, 0.397224, 0.71911, 3.80402, 5.23609, -2.34476)
 
 [node name="Gameplay" type="Node" parent="."]
 script = ExtResource("4_y6it0")
 stock_configuration = {
 "Bobing": NodePath("../Monitor")
 }
+
+[node name="Holder2" parent="." instance=ExtResource("5_p7uno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.946296, 0)
+
+[node name="Stool2" parent="." instance=ExtResource("6_majp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81729, 0.977832, 0)
+
+[node name="Bubble2" parent="." instance=ExtResource("7_8e5xf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.87969, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.745255, 2.91459e-08, -0.66678, 0.66678, -3.25761e-08, 0.745255, 0, -1, -4.37114e-08, 0.0482099, 6.34819, 0)
+light_energy = 6.019
+light_specular = 0.015
+spot_range = 10.4086
+spot_angle = 41.4454
