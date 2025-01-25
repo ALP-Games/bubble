@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=16 format=4 uid="uid://ddri64sk3ke7j"]
 
 [ext_resource type="Texture2D" uid="uid://bcray7u8p6vxm" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
 [ext_resource type="Script" path="res://Scripts/monitor.gd" id="1_6i2me"]
@@ -90,22 +90,18 @@ _data = {
 "Red_Press": SubResource("Animation_4eeip")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8k1ix"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpoqp"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_8k1ix")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_lhl0j"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyums"]
 resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
 roughness = 0.26
 roughness_texture = ExtResource("4_i3wgj")
 emission_enabled = true
-emission = Color(1, 0, 1, 1)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.5
+emission_operator = 1
 emission_texture = SubResource("ViewportTexture_lhl0j")
 clearcoat_roughness = 0.79
 refraction_scale = -0.26
@@ -188,7 +184,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08603, 0.00589238, -0.01370
 
 [node name="Screen" type="MeshInstance3D" parent="Screen2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000193834, 0.00430083, -8.10623e-06)
-material_override = SubResource("StandardMaterial3D_hpoqp")
 mesh = SubResource("ArrayMesh_rkt8l")
 skeleton = NodePath("")
 
