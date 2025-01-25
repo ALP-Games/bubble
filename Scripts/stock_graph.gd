@@ -3,7 +3,7 @@ extends Panel
 @export var stock_update_delay := 0.25
 var stock_update_elapsed := 0.0
 
-var stock_prices : Array[int] = []
+var stock_prices : Array[int] = [0, 1]
 var max_points := 20  # Maximum points on the graph
 
 
