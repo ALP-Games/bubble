@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://donrfe5ihf054"]
+
+[ext_resource type="LabelSettings" uid="uid://52cs4c1j4hxf" path="res://UI/bigtext_stock_ui.tres" id="1_k6hnn"]
+[ext_resource type="Script" path="res://Scripts/proto_ui.gd" id="1_q3m12"]
+
+[node name="ProtoUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_q3m12")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "100"
+label_settings = ExtResource("1_k6hnn")
+horizontal_alignment = 1
