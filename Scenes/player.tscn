@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4ek7o4r32c2"]
+[gd_scene load_steps=3 format=3 uid="uid://d4ek7o4r32c2"]
 
 [ext_resource type="Script" path="res://Scripts/head.gd" id="1_msc0x"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ygsho"]
+exposure_multiplier = 0.747
 
 [node name="Player" type="Node3D"]
 
@@ -8,4 +11,7 @@
 script = ExtResource("1_msc0x")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.370491, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.370491, 0.13205)
+attributes = SubResource("CameraAttributesPractical_ygsho")
+fov = 44.5876
+size = 0.787818

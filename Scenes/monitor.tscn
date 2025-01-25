@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=17 format=4 uid="uid://ddri64sk3ke7j"]
 
-[ext_resource type="Texture2D" uid="uid://bcray7u8p6vxm" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
+[ext_resource type="Texture2D" uid="uid://5kplq8o4lw7k" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
 [ext_resource type="Script" path="res://Scripts/monitor.gd" id="1_6i2me"]
-[ext_resource type="Texture2D" uid="uid://cyd2ed1dxlj5s" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
+[ext_resource type="Texture2D" uid="uid://c2hsaxiftafrm" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
 [ext_resource type="PackedScene" uid="uid://c8bmfd2hy7x7g" path="res://UI/stock_ui.tscn" id="3_e8ho8"]
+[ext_resource type="Texture2D" uid="uid://dw0u12cqddo8p" path="res://Assets/sCREENrOUGH.png" id="4_i3wgj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kwfs"]
 resource_name = "Cube.006"
@@ -105,8 +106,13 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyums"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_xjnio")
-roughness = 0.1
+roughness = 0.26
+roughness_texture = ExtResource("4_i3wgj")
+emission_energy_multiplier = 7.45
+emission_operator = 1
 emission_texture = SubResource("ViewportTexture_lhl0j")
+clearcoat_roughness = 0.79
+refraction_scale = -0.26
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_28tfp"]
 _surfaces = [{
@@ -182,6 +188,7 @@ libraries = {
 }
 
 [node name="Screen2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08603, 0.00589238, -0.0137014)
 
 [node name="Screen" type="MeshInstance3D" parent="Screen2"]
 material_override = SubResource("StandardMaterial3D_hpoqp")
