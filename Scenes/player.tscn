@@ -1,17 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4ek7o4r32c2"]
+[gd_scene load_steps=7 format=3 uid="uid://d4ek7o4r32c2"]
 
 [ext_resource type="Script" path="res://Scripts/head.gd" id="1_msc0x"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_p0sa5"]
+[ext_resource type="PackedScene" uid="uid://ctp5q71h5fr3u" path="res://UI/proto_ui.tscn" id="3_5kf7n"]
+[ext_resource type="PackedScene" uid="uid://ch17qdupy6vqs" path="res://UI/PlayerCharacterUI.tscn" id="3_5tob2"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ygsho"]
 exposure_multiplier = 0.747
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_7h8bg"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Player" type="Node3D"]
+script = ExtResource("1_p0sa5")
 
 [node name="Head" type="Node3D" parent="."]
 script = ExtResource("1_msc0x")
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Eyes" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.370491, 0.13205)
+
+[node name="Camera3D" type="Camera3D" parent="Head/Eyes"]
 attributes = SubResource("CameraAttributesPractical_ygsho")
 fov = 44.5876
 size = 0.787818
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Eyes"]
+target_position = Vector3(0, 0, -3)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_7h8bg")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="PlayerCharacterUI" parent="SubViewport" instance=ExtResource("3_5tob2")]
+
+[node name="ProtoUI" parent="SubViewport" instance=ExtResource("3_5kf7n")]

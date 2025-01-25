@@ -6,4 +6,4 @@
 resource_name = "EvalNum"
 font = ExtResource("1_80i4k")
 font_size = 14
-font_color = Color(1, 0.575333, 0.51, 1)
+font_color = Color(1, 0, 0, 1)

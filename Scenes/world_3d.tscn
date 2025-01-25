@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dx08vllvivlyf" path="res://Assets/Pipe01.glb" id="9_42xta"]
 [ext_resource type="Resource" uid="uid://5awjv0rwuusw" path="res://Resources/Shlamantese.tres" id="9_m5au0"]
 [ext_resource type="Resource" uid="uid://bdadi8yidmb6j" path="res://Resources/Blood.tres" id="10_6m4jd"]
-[ext_resource type="PackedScene" path="res://Scenes/clock.tscn" id="16_7cqld"]
+[ext_resource type="PackedScene" uid="uid://cdvpbpne0cblk" path="res://Scenes/clock.tscn" id="16_7cqld"]
 [ext_resource type="PackedScene" uid="uid://djfddcidspbhm" path="res://Assets/Counters/MoneyCounter.glb" id="17_ds6j3"]
 
 [sub_resource type="Gradient" id="Gradient_w4xwo"]

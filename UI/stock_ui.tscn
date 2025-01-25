@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/stock_graph.gd" id="1_6jq88"]
 [ext_resource type="LabelSettings" uid="uid://52cs4c1j4hxf" path="res://UI/bigtext_stock_ui.tres" id="1_nihkq"]
 [ext_resource type="Script" path="res://Scripts/stock_ui.gd" id="1_pvf3b"]
-[ext_resource type="LabelSettings" uid="uid://yni72q0ygr5s" path="res://UI/smalltext_stock_ui.tres" id="3_6odb4"]
+[ext_resource type="LabelSettings" uid="uid://cdjyyw2uixi1j" path="res://UI/smalltext_crosshair_ui.tres" id="4_qb40t"]
 [ext_resource type="LabelSettings" uid="uid://b0dx03d83mmp7" path="res://UI/EvalNum_stock_ui.tres" id="5_h3tyf"]
 
 [node name="StockUI" type="Control"]
@@ -68,42 +68,42 @@ alignment = 1
 [node name="BuyPriceLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Buy Price:"
-label_settings = ExtResource("3_6odb4")
+label_settings = ExtResource("4_qb40t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuyPriceNumber" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "300"
-label_settings = ExtResource("3_6odb4")
+label_settings = ExtResource("4_qb40t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SellPriceLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Sell Price:"
-label_settings = ExtResource("3_6odb4")
+label_settings = ExtResource("4_qb40t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SellPriceNumber" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "200"
-label_settings = ExtResource("3_6odb4")
+label_settings = ExtResource("4_qb40t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UnitsOwnedLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Units Owned:"
-label_settings = ExtResource("3_6odb4")
+label_settings = ExtResource("4_qb40t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UnitsOwnedNumber" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "104"
-label_settings = ExtResource("3_6odb4")
+label_settings = ExtResource("4_qb40t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
