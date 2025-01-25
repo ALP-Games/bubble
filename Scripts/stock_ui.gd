@@ -1,12 +1,12 @@
 class_name StockUI
 extends Control
 
-@onready var stock_name_label := $HBoxContainer/VBoxContainer2/StockNameContainer/StockName
-@onready var stock_graph := $HBoxContainer/VBoxContainer2/StockGraph
+@onready var stock_name_label := $MarginContainer/VBoxContainer/StockNameContainer/StockName
+@onready var stock_graph := $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/StockGraph
 
-@onready var buy_price_number := $HBoxContainer/MarginContainer/VBoxContainer/BuyPriceNumber
-@onready var sell_price_number := $HBoxContainer/MarginContainer/VBoxContainer/SellPriceNumber
-@onready var evaluation := $HBoxContainer/MarginContainer/VBoxContainer/UnitsPerTransactionNumber
+@onready var buy_price_number := $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/BuyPriceNumber
+@onready var sell_price_number := $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/SellPriceNumber
+@onready var evaluation := $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/UnitsPerTransactionNumber
 
 func set_stock_name(name: StringName) -> void:
 	stock_name_label.text = name
