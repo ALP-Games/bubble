@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StockSimulated" load_steps=2 format=3 uid="uid://cyvwdqhclpvi5"]
+
+[ext_resource type="Script" path="res://Scripts/stock_simulated.gd" id="1_bupp0"]
+
+[resource]
+script = ExtResource("1_bupp0")
+name = &"ActualCCP"
+earnings = 86.0
+_earnings_growth = 0.6
+_earnings_decline = 0.35
+overevaluation_bias = 35.0
+stock_price = 440
+_price_growth = 15
+_price_decline = 6

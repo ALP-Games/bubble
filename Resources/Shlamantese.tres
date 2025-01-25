@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StockSimulated" load_steps=2 format=3 uid="uid://5awjv0rwuusw"]
+
+[ext_resource type="Script" path="res://Scripts/stock_simulated.gd" id="1_ype5o"]
+
+[resource]
+script = ExtResource("1_ype5o")
+name = &"Shamantese"
+earnings = 15.0
+_earnings_growth = 0.15
+_earnings_decline = 0.1
+overevaluation_bias = 30.0
+stock_price = 75
+_price_growth = 3
+_price_decline = 2

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StockSimulated" load_steps=2 format=3 uid="uid://b4mxltjbcyacj"]
+
+[ext_resource type="Script" path="res://Scripts/stock_simulated.gd" id="1_g5f7x"]
+
+[resource]
+script = ExtResource("1_g5f7x")
+name = &"SAWBlaydez"
+earnings = 40.0
+_earnings_growth = 0.4
+_earnings_decline = 0.2
+overevaluation_bias = 32.0
+stock_price = 420
+_price_growth = 33
+_price_decline = 25
