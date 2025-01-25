@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=14 format=4 uid="uid://ddri64sk3ke7j"]
 
 [ext_resource type="Texture2D" uid="uid://bcray7u8p6vxm" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
 [ext_resource type="Texture2D" uid="uid://cyd2ed1dxlj5s" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
@@ -88,9 +88,14 @@ _data = {
 "Red_Press": SubResource("Animation_4eeip")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x262f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xjnio"]
+viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_610tb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyums"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_xjnio")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_28tfp"]
 _surfaces = [{
 "aabb": AABB(-1.09878, -0.574977, -0.804013, 0.21818, 1.14995, 1.60803),
 "format": 34896613377,
@@ -104,7 +109,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_314wc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_rkt8l"]
 resource_name = "Screen_Cube_008"
 _surfaces = [{
 "aabb": AABB(-1.09878, -0.574977, -0.804013, 0.21818, 1.14995, 1.60803),
@@ -113,14 +118,14 @@ _surfaces = [{
 "index_count": 216,
 "index_data": PackedByteArray("LgAZABYALgAvABkAIAAOAB8AIAAFAA4ALQARABMALQAqABEAMAAWABsAMAAuABYAHgAvAC4AHgAfAC8AAgApAAwAAgAhACkABgANAAgABgAHAA0AGAAPAAsAGAAXAA8ACwAJAAoACwAPAAkAJQARACIAJQATABEAJwATACUAJwAZABMAIwASACQAIwAQABIAIQAeACkAIQAdAB4AKAAWACYAKAAbABYAGgAVABQAGgAcABUAAAAMAAEAAAACAAwAJgAZACcAJgAWABkAFAAXABgAFAAVABcAKQAuADAAKQAeAC4AKwASABAAKwAsABIACAAcABoACAANABwAJAAbACgAJAASABsALwATABkALwAtABMABQADAA4ABQAEAAMALAAbABIALAAwABsADAAwACwADAApADAAHQAfAB4AHQAgAB8ADQAoABwADQAkACgAFQAnABcAFQAmACcAHAAmABUAHAAoACYABwAkAA0ABwAjACQAFwAlAA8AFwAnACUADwAiAAkADwAlACIADgAqAC0ADgADACoAAQAsACsAAQAMACwAHwAtAC8AHwAOAC0A"),
 "lods": [0.115378, PackedByteArray("IAAOAB8AHQAgAB8AIAAFAA4AIQAdAB8ABQADAA4ABQAEAAMADgADACoADgAqAC8AHwAOAC8ALwAqABEAIQAfACkAAgAhACkAAgApAEAAKQAfADAAQAApADAAHwAvADAAQAAwACwAAQBAACwAAQAsACsAKwAsABAAIwAQACwALAAwACgAIwAsACgAKAAwAC8ABwAjAEEAQQAjACgAQQAoABwACABBABwACAAcABoAGgAcABcAHAAoABcAGgAXABQAFAAXABgAFwAoACcAKAAvACcALwARACcAJwARAEIAFwAnAA8AGAAXAA8ADwAnAEIAGAAPAAsADwBCAAkACwAPAAkACwAJAAoA"), 0.462764, PackedByteArray("IAAFADwABQAEADMABQAzADwAPAAzAD4APgA4ADwAPAA4AD0APAA9ADUANgA1AAoANgA8ADUAOgA8ADYAOQA8ADoAOwA8ADkAOwA0ADwAIwA8ADQABgAjADQABwAjAAYAIwA3ADwAPwA8ADcAMgA8AD8AMgAxADwAAgAhADEAMQAhAB0A")],
-"material": SubResource("StandardMaterial3D_x262f"),
+"material": SubResource("StandardMaterial3D_xyums"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 67,
 "vertex_data": PackedByteArray("//8UBZ8DfeH//wAAaAxV1P//RxEAAEzl/////2gMptX//+r6nwNh3P//t+4AABXl//8UBV/8d6j//wAAlvNmuv//RxH//5yd/////5bz+7j//+r6X/y7sf//t+7//8ydJWt+EzoN+9Mla34TxPIGsCVrgOw6DfjTJWuA7MTyCbD//wAA/3/dyP//////f93IJWt+E/9/q8Mla4Ds/3+rw////3///5+XJWv/f8TyS6gAAP9//3//vyVrQLbE8kqp//9bt///n5dxFkC2/39FwP//o0j//5+XcRa+Sf9/RcAla75JxPJKqf///38AAF7oJWv/fzoNs9cla0C2Og2+1v//W7cAAF7o//+jSAAAXuj/////yrndyP//AADKud3IJWt+E2G5N8Ila4DsYbkewnEW/39huWy7nyxAtmG50byfLL5JYbnTvCVrvkk6Db7W/////zRG3cj//wAANEbdyCVrfhOdRlLEJWuA7J1Ga8RxFv9/nUaRxJ8sQLadRnfDnyy+SZ1GdcP//xQFnwMs4f//AABoDBbT/////2gM9dX//0cR//9crP////+W84K1//+37v//oKn//wAA/3+nw///////f7vD////f///p6j//1u3//88qf//o0j///un////fwAAONf/////yrlDwv////80RqnG//8AADRGVcb//xQFnwPZ2v//FAVf/Lqr/////8q5ZcGbVzzzJUij5eJqkfstlznJyaBEzjuG3Om0PPXRuTvx21VRHduIp3S7C5hluY6i48+fXnbyhFFd5JiNmd6Qm4DRcj4438Wgcr6TTkjntZiSzv9//v//f/7//3///2CEG/n/f/7/DYni7f9//v/jbfD2LXmG+/9//v//f///bIEV/P9//v//f/7/xaByvnI+ON8KUCjoNpgB0P9///+Ah9Lxz3Gl+B98qf7FoHK+cj443+FQTOhRl+zQ/3///zOG0vLPcqT5+GrZ+LFcwe0ujwnd7Ee71aic3swcpRPM81aA6yWWqtNXgS/+V46i7Ddx/fSvfwT+f5T/1g2VadXmVKTqh2G19gFF/NcUmozL")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_610tb")
+shadow_mesh = SubResource("ArrayMesh_28tfp")
 
 [node name="Monitor" type="Node3D"]
 
@@ -164,10 +169,10 @@ libraries = {
 [node name="Screen2" type="Node3D" parent="."]
 
 [node name="Screen" type="MeshInstance3D" parent="Screen2"]
-mesh = SubResource("ArrayMesh_314wc")
+mesh = SubResource("ArrayMesh_rkt8l")
 skeleton = NodePath("")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(800, 600)
+size = Vector2i(1152, 864)
 
 [node name="StockUI" parent="SubViewport" instance=ExtResource("3_e8ho8")]
