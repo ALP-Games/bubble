@@ -9,13 +9,13 @@
 [ext_resource type="Resource" uid="uid://bw1qdx02yck3g" path="res://Resources/Bobing.tres" id="5_u8gkb"]
 [ext_resource type="Resource" uid="uid://cyvwdqhclpvi5" path="res://Resources/ActualChina.tres" id="6_5oa5g"]
 [ext_resource type="PackedScene" uid="uid://d2cjy2u4jgo1k" path="res://Assets/Stool.glb" id="6_majp8"]
-[ext_resource type="PackedScene" uid="uid://dsthxdgoc1gw6" path="res://Assets/Bubble.glb" id="7_8e5xf"]
 [ext_resource type="Resource" uid="uid://b1w58ghsd8bda" path="res://Resources/Infra.tres" id="7_474sp"]
 [ext_resource type="Resource" uid="uid://b4mxltjbcyacj" path="res://Resources/SawBladez.tres" id="8_aas88"]
 [ext_resource type="PackedScene" uid="uid://ddxkg4pu8ct6s" path="res://Assets/Pipe00.glb" id="8_f0jjb"]
 [ext_resource type="PackedScene" uid="uid://c5ahu0q71t825" path="res://Assets/Pipe01.glb" id="9_42xta"]
 [ext_resource type="Resource" uid="uid://5awjv0rwuusw" path="res://Resources/Shlamantese.tres" id="9_m5au0"]
 [ext_resource type="Resource" uid="uid://bdadi8yidmb6j" path="res://Resources/Blood.tres" id="10_6m4jd"]
+[ext_resource type="PackedScene" uid="uid://bt8c1fpurativ" path="res://Scenes/Bubble.tscn" id="14_2wil5"]
 [ext_resource type="PackedScene" uid="uid://cdvpbpne0cblk" path="res://Scenes/clock.tscn" id="16_7cqld"]
 [ext_resource type="PackedScene" uid="uid://b48e68dlvuphd" path="res://Assets/Counters/MoneyCounter.glb" id="17_ds6j3"]
 
@@ -149,8 +149,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.946296, 0)
 [node name="Stool2" parent="." instance=ExtResource("6_majp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81729, 0.977832, 0)
 
-[node name="Bubble2" parent="." instance=ExtResource("7_8e5xf")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.87969, 0)
+[node name="Bubble2" parent="." instance=ExtResource("14_2wil5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93837, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.914861, 1.76493e-08, -0.403769, 0.403769, -3.99898e-08, 0.914861, 0, -1, -4.37114e-08, 0.572226, 5.88034, 0)

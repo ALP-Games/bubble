@@ -19,6 +19,8 @@ var MAX_HISTORY := 20
 @export var stock_price: float = 100
 @export var _price_growth: float = 2
 @export var _price_decline: float = 1
+@export var growth_per_stock: float = 0.01
+@export var decline_per_stock: float = 0.02
 
 var stock_owned: int = 0
 
@@ -58,14 +60,16 @@ func update() -> void:
 
 
 func buy_stock(capital: int) -> int:
-	if capital > buy_price:
+	if capital > buy_price and buy_price > 0:
 		capital -= buy_price
 		stock_owned += 1
+		stock_price += growth_per_stock * _price_growth * stock_owned
 	return capital
 
 
 func sell_stock(capital: int) -> int:
-	if stock_owned > 0:
+	if stock_owned > 0 and buy_price > 0:
 		stock_owned -= 1
 		capital += sell_price
+		stock_price -= decline_per_stock * _price_decline * stock_owned
 	return capital
