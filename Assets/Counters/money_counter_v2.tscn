@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4u7s60iyao5a"]
 
-[ext_resource type="PackedScene" uid="uid://c1u4xny6pu6rm" path="res://Assets/Counters/MoneyCounter.glb" id="1_7pnti"]
+[ext_resource type="PackedScene" uid="uid://b48e68dlvuphd" path="res://Assets/Counters/MoneyCounter.glb" id="1_7pnti"]
 [ext_resource type="PackedScene" uid="uid://dilwk2ahdrnn3" path="res://UI/money_count.tscn" id="2_dogay"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_v0rvh"]

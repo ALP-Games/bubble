@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://bdadi8yidmb6j" path="res://Resources/Blood.tres" id="10_6m4jd"]
 [ext_resource type="PackedScene" uid="uid://bt8c1fpurativ" path="res://Scenes/Bubble.tscn" id="14_2wil5"]
 [ext_resource type="PackedScene" uid="uid://cdvpbpne0cblk" path="res://Scenes/clock.tscn" id="16_7cqld"]
-[ext_resource type="PackedScene" uid="uid://b48e68dlvuphd" path="res://Assets/Counters/MoneyCounter.glb" id="17_ds6j3"]
+[ext_resource type="PackedScene" uid="uid://ct5nu8mrdot8g" path="res://Scenes/money_counter.tscn" id="20_84g2k"]
 
 [sub_resource type="Gradient" id="Gradient_w4xwo"]
 colors = PackedColorArray(0.00077429, 0.0137135, 0.021352, 1, 0.695969, 0.97672, 0.738921, 1)
@@ -213,5 +213,5 @@ transform = Transform3D(-0.478431, 0, 0.878125, 0, 1, 0, -0.878125, 0, -0.478431
 [node name="Clock2" parent="." instance=ExtResource("16_7cqld")]
 transform = Transform3D(0.87998, 0.204049, 0.428951, -0.225886, 0.974154, -1.40478e-10, -0.417864, -0.0968941, 0.903328, 4.54143, 1.75716, -1.4917)
 
-[node name="MoneyCounter2" parent="." instance=ExtResource("17_ds6j3")]
-transform = Transform3D(0.880462, 0.319314, -0.350464, -0.34405, 0.938909, -0.00889347, 0.326214, 0.128408, 0.936534, 4.56883, 1.80145, 0.799381)
+[node name="MoneyCounter" parent="." instance=ExtResource("20_84g2k")]
+transform = Transform3D(0.880462, 0.319313, -0.350464, -0.34405, 0.938909, -0.00889366, 0.326214, 0.128408, 0.936534, 4.56883, 1.80145, 0.799381)

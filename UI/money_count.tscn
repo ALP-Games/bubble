@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dilwk2ahdrnn3"]
 
-[ext_resource type="FontFile" uid="uid://d3xs0arxy2dqm" path="res://UI/7segment.ttf" id="1_u4bwh"]
+[ext_resource type="FontFile" uid="uid://cckjxq0xurtdq" path="res://UI/7segment.ttf" id="1_u4bwh"]
 
 [sub_resource type="FontVariation" id="FontVariation_2w75e"]
 base_font = ExtResource("1_u4bwh")
