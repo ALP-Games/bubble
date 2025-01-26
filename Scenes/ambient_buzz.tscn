@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6wbrumtuyc26"]
+[gd_scene load_steps=3 format=3 uid="uid://b6wbrumtuyc26"]
 
 [ext_resource type="AudioStream" uid="uid://bsv1nk88twtig" path="res://Audio/TvSounds/BuzzSound.ogg" id="1_18gf1"]
+[ext_resource type="Script" path="res://Scripts/ambient_buzz.gd" id="2_a6238"]
 
 [node name="AmbientBuzz" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_18gf1")
 autoplay = true
+script = ExtResource("2_a6238")
