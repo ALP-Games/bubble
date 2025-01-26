@@ -28,6 +28,8 @@ size = 0.787818
 [node name="RayCast3D" type="RayCast3D" parent="Head/Eyes"]
 target_position = Vector3(0, 0, -3)
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Head/Eyes"]
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
