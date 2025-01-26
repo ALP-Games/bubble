@@ -4,11 +4,13 @@
 
 [resource]
 script = ExtResource("1_g5f7x")
-name = &"SAWBlaydez"
+name = &"SawBladez"
 earnings = 40.0
-_earnings_growth = 0.4
-_earnings_decline = 0.2
+_earnings_growth = 0.04
+_earnings_decline = 0.02
 overevaluation_bias = 32.0
-stock_price = 420
-_price_growth = 33
-_price_decline = 25
+stock_price = 100.0
+_price_growth = 2.0
+_price_decline = 1.0
+growth_per_stock = 0.01
+decline_per_stock = 0.02

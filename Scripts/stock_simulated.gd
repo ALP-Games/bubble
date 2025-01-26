@@ -19,8 +19,8 @@ var MAX_HISTORY := 20
 @export var stock_price: float = 100
 @export var _price_growth: float = 2
 @export var _price_decline: float = 1
-@export var growth_per_stock: float = 0.01
-@export var decline_per_stock: float = 0.02
+@export var growth_per_stock: float = 0.001
+@export var decline_per_stock: float = 0.002
 
 var stock_owned: int = 0
 
