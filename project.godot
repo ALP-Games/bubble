@@ -44,6 +44,5 @@ sell={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 textures/decals/filter=0
 textures/light_projectors/filter=0
