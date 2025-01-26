@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://cyvwdqhclpvi5" path="res://Resources/ActualChina.tres" id="6_5oa5g"]
 [ext_resource type="PackedScene" uid="uid://d2cjy2u4jgo1k" path="res://Assets/Stool.glb" id="6_majp8"]
 [ext_resource type="Resource" uid="uid://b1w58ghsd8bda" path="res://Resources/Infra.tres" id="7_474sp"]
-[ext_resource type="Resource" uid="uid://b4mxltjbcyacj" path="res://Resources/SawBladez.tres" id="8_aas88"]
+[ext_resource type="Resource" uid="uid://b4mxltjbcyacj" path="res://Resources/Detcla.tres" id="8_aas88"]
 [ext_resource type="PackedScene" uid="uid://ddxkg4pu8ct6s" path="res://Assets/Pipe00.glb" id="8_f0jjb"]
 [ext_resource type="PackedScene" uid="uid://c5ahu0q71t825" path="res://Assets/Pipe01.glb" id="9_42xta"]
 [ext_resource type="Resource" uid="uid://5awjv0rwuusw" path="res://Resources/Shlamantese.tres" id="9_m5au0"]

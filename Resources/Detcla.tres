@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="StockSimulated" load_steps=2 format=3 uid="uid://b4mxltjbcyacj"]
 
-[ext_resource type="Script" path="res://Scripts/stock_simulated.gd" id="1_g5f7x"]
+[ext_resource type="Script" path="res://Scripts/stock_simulated.gd" id="1_yatw2"]
 
 [resource]
-script = ExtResource("1_g5f7x")
-name = &"SawBladez"
-earnings = 40.0
+script = ExtResource("1_yatw2")
+name = &"Detcla"
+earnings = 10.0
 _earnings_growth = 0.04
 _earnings_decline = 0.02
-overevaluation_bias = 32.0
+overevaluation_bias = 40.0
 stock_price = 100.0
-_price_growth = 2.0
-_price_decline = 1.0
+_price_growth = 8.0
+_price_decline = 3.0
 growth_per_stock = 0.01
 decline_per_stock = 0.02

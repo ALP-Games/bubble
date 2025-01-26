@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4ek7o4r32c2"]
+[gd_scene load_steps=10 format=3 uid="uid://d4ek7o4r32c2"]
 
 [ext_resource type="Script" path="res://Scripts/head.gd" id="1_msc0x"]
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_p0sa5"]
 [ext_resource type="PackedScene" uid="uid://ch17qdupy6vqs" path="res://UI/PlayerCharacterUI.tscn" id="3_5tob2"]
 [ext_resource type="Shader" path="res://Shaders/wake_up.gdshader" id="5_bx1pw"]
+[ext_resource type="PackedScene" uid="uid://va6dkt2un8jn" path="res://UI/gameEnd.tscn" id="6_gdvr2"]
 [ext_resource type="Script" path="res://Scripts/wake_up.gd" id="6_pqna6"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ygsho"]
@@ -19,6 +20,7 @@ shader_parameter/bluryness = 0.75
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_p0sa5")
+game_end_scene = ExtResource("6_gdvr2")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.917713, 0.397244, 0, -0.397244, 0.917713, 0, 0, 0)
@@ -43,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = SubResource("ViewportTexture_7h8bg")
 
 [node name="SubViewport" type="SubViewport" parent="."]

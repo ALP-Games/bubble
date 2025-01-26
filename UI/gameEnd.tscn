@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dan1w8nyb0mod"]
+[gd_scene load_steps=9 format=3 uid="uid://va6dkt2un8jn"]
 
-[ext_resource type="StyleBox" uid="uid://dolts2816o50y" path="res://UI/new_style_box_empty.tres" id="1_j6ee2"]
+[ext_resource type="Script" path="res://Scripts/game_end.gd" id="1_55pvt"]
+[ext_resource type="StyleBox" path="res://UI/new_style_box_empty.tres" id="1_j6ee2"]
 [ext_resource type="LabelSettings" uid="uid://52cs4c1j4hxf" path="res://UI/bigtext_stock_ui.tres" id="2_carxh"]
-[ext_resource type="FontFile" uid="uid://ccewxkrh8g4lp" path="res://UI/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf" id="3_pqeqq"]
+[ext_resource type="FontFile" uid="uid://cvqfn4qko66xe" path="res://UI/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf" id="3_pqeqq"]
 
 [sub_resource type="FontVariation" id="FontVariation_60gpu"]
 base_font = ExtResource("3_pqeqq")
@@ -20,13 +21,14 @@ border_color = Color(0.803922, 1, 0.741176, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12lgq"]
 
-[node name="Control" type="Control"]
+[node name="GameEnd" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_55pvt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -46,19 +48,8 @@ theme_override_styles/panel = ExtResource("1_j6ee2")
 
 [node name="YouLasted" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "You lasted:"
-label_settings = ExtResource("2_carxh")
-horizontal_alignment = 1
-
-[node name="TimeNum" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "9999"
-label_settings = ExtResource("2_carxh")
-horizontal_alignment = 1
-
-[node name="TimeUnits" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "seconds"
+text = "You kept the market
+afloat for %s months"
 label_settings = ExtResource("2_carxh")
 horizontal_alignment = 1
 

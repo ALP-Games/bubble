@@ -5,12 +5,12 @@
 [resource]
 script = ExtResource("1_urfdl")
 name = &"INfra"
-earnings = 30.0
+earnings = 10.0
 _earnings_growth = 0.03
 _earnings_decline = 0.015
-overevaluation_bias = 45.0
+overevaluation_bias = 23.0
 stock_price = 100.0
-_price_growth = 2.0
+_price_growth = 4.0
 _price_decline = 1.0
 growth_per_stock = 0.01
 decline_per_stock = 0.02

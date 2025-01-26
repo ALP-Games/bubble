@@ -45,7 +45,7 @@ func update() -> void:
 		sell_price = stock_price * randf_range(0.9, 1.0)
 		
 	elif _state == State.RUPTURE:
-		_price_growth += randf_range(0.0, 0.2)
+		_price_growth += randf_range(_price_decline, _price_growth)
 		stock_price -= randf_range(_price_decline, _price_decline + _price_growth)
 		earnings -= randf_range(_earnings_decline, _earnings_decline + _earnings_growth)
 		if stock_price <= 0:

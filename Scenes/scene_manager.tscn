@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://by0y8c6xkc2s3"]
+
+[ext_resource type="Script" path="res://Scripts/scene_manager.gd" id="1_i2id7"]
+[ext_resource type="PackedScene" uid="uid://dbqqdupnvapvi" path="res://Scenes/world_3d.tscn" id="2_13pri"]
+
+[node name="scene_manager" type="Node3D"]
+script = ExtResource("1_i2id7")
+level = ExtResource("2_13pri")

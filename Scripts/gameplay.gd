@@ -22,6 +22,7 @@ signal the_end
 	set(value):
 		_bubble_growth = Vector3(value, value, value)
 var _bubble_growth: Vector3 = Vector3(0.45, 0.45, 0.45)
+var score: int = 0
 
 #var participant_delay
 var elapsed_time: float = 0
@@ -66,6 +67,7 @@ func _process(delta):
 	clock_time_elasped += delta
 	if clock_time_elasped >= clock_interval:
 		clock_time_elasped -= clock_interval
+		score += 1
 		clock_tick.emit()
 	
 	elapsed_time += delta
@@ -93,7 +95,7 @@ func _process_dead_stock_queue() -> void:
 		bubble_tween = null
 		if stocks.is_empty():
 			the_end.emit())
-	if not stocks.is_empty():
+	if not stocks.is_empty() and dead_stock_queue.is_empty():
 		_play_sound_at_bubble(bubble_growth_sound)
 
 

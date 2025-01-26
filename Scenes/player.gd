@@ -7,18 +7,27 @@ extends Node3D
 @onready var crosshair_ui := $SubViewport/PlayerCharacterUI
 @onready var wake_up := $SubViewport/wake_up
 
+@export var game_end_scene: PackedScene
+
 
 func _enter_tree() -> void:
 	game_manager.player_instance = self
 
 
 func _ready() -> void:
+	game_manager.gameplay_instance.the_end.connect(_show_end_ui)
 	game_manager.gameplay_instance.the_end.connect(wake_up.set_radius.bind(0.0))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _show_end_ui() -> void:
+	var game_end_instance: GameOver = game_end_scene.instantiate()
+	add_child(game_end_instance)
+	game_end_instance._display_game_end()
 
 
 func _physics_process(delta: float) -> void:

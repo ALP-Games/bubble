@@ -18,9 +18,10 @@ func _nothing(event: InputEvent) -> void:
 
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	game_manager.gameplay_instance.game_over_sequence_start.connect(func()->void:
 		handle_input_callable = _handle_up_and_down)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	game_manager.player_instance.ready.connect(func()->void:
 		var enable_input := create_tween()
 		enable_input.tween_callback(func()->void:handle_input_callable = _handle_mouse_input).\

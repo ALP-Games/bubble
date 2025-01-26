@@ -7,7 +7,12 @@ var player_instance: Player = null:
 	set(value):
 		player_instance = value
 		player_set.emit()
-var gameplay_instance: Gameplay = null
+var gameplay_instance: Gameplay = null:
+	set(value):
+		gameplay_instance = value
+		gameplay_instance.the_end.connect(func()->void:process_ambient_sounds=func(delta: float):pass)
+var scene_manager: SceneManager = null
+
 var ambient_sounds: Array[AmbientSound]
 var delay_from: float = 3.0
 var delay_up_to: float = 10.0
@@ -19,7 +24,6 @@ var process_ambient_sounds: Callable = _process_ambient_sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	gameplay_instance.the_end.connect(func()->void:process_ambient_sounds=func(delta: float):pass)
 	current_delay = randf_range(delay_from, delay_up_to)
 
 

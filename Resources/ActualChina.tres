@@ -5,12 +5,12 @@
 [resource]
 script = ExtResource("1_bupp0")
 name = &"ActualCCP"
-earnings = 86.0
+earnings = 10.0
 _earnings_growth = 0.05
 _earnings_decline = 0.025
 overevaluation_bias = 35.0
 stock_price = 100.0
-_price_growth = 2.0
-_price_decline = 1.0
+_price_growth = 4.0
+_price_decline = 1.5
 growth_per_stock = 0.01
 decline_per_stock = 0.02
