@@ -6,15 +6,26 @@ extends Node3D
 @onready var parent := get_parent()
 
 
+var handle_input_callable: Callable = func(event: InputEvent)->void:pass
+
+
 #TODO export this
 const SENSTIVITY: float = 0.003 # has to be modifiable in settings
 
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	game_manager.player_instance.ready.connect(func()->void:
+		var enable_input := create_tween()
+		enable_input.tween_callback(func()->void:handle_input_callable = _handle_mouse_input).set_delay(game_manager.player_instance.wake_up.delay))
+	
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	handle_input_callable.call(event)
+
+
+func _handle_mouse_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		var rotation = -event.relative * SENSTIVITY
 		

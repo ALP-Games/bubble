@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=22 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
+[ext_resource type="Script" path="res://Scripts/blind_before_load.gd" id="1_kr675"]
 [ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
 [ext_resource type="PackedScene" uid="uid://ddri64sk3ke7j" path="res://Scenes/monitor.tscn" id="3_qc2cn"]
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="4_y6it0"]
@@ -42,6 +43,24 @@ adjustment_saturation = 1.09
 adjustment_color_correction = SubResource("GradientTexture2D_uxmfw")
 
 [node name="World3D" type="Node3D"]
+
+[node name="BlindBeforeLoad" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kr675")
+
+[node name="ColorRect" type="ColorRect" parent="BlindBeforeLoad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Blockout" parent="." instance=ExtResource("2_dmqej")]
 visible = false
@@ -122,7 +141,7 @@ stock_configuration = {
 }
 
 [node name="Player" parent="." instance=ExtResource("1_3xj3b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41919, 2.91376, 0)
+transform = Transform3D(0.186764, 0, -0.982405, 0, 1, 0, 0.982405, 0, 0.186764, 2.41919, 2.91376, 0)
 
 [node name="Holder2" parent="." instance=ExtResource("5_p7uno")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.946296, 0)
