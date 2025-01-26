@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6wbrumtuyc26"]
+
+[ext_resource type="AudioStream" uid="uid://bsv1nk88twtig" path="res://Audio/TvSounds/BuzzSound.ogg" id="1_18gf1"]
+
+[node name="AmbientBuzz" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_18gf1")
+autoplay = true

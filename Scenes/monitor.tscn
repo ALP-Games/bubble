@@ -1,10 +1,12 @@
-[gd_scene load_steps=18 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=22 format=4 uid="uid://ddri64sk3ke7j"]
 
-[ext_resource type="Texture2D" uid="uid://bcray7u8p6vxm" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
+[ext_resource type="Texture2D" uid="uid://dfduokpwwu1bk" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
 [ext_resource type="Script" path="res://Scripts/monitor.gd" id="1_6i2me"]
-[ext_resource type="Texture2D" uid="uid://cyd2ed1dxlj5s" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
+[ext_resource type="AudioStream" uid="uid://cpo2iwnh03a8x" path="res://Audio/TvSounds/Turnoff .ogg" id="2_d5y0q"]
+[ext_resource type="Texture2D" uid="uid://bdoemfwxa2t8b" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
 [ext_resource type="PackedScene" uid="uid://c8bmfd2hy7x7g" path="res://UI/stock_ui.tscn" id="3_e8ho8"]
-[ext_resource type="Texture2D" uid="uid://botq4x6jsasxm" path="res://Assets/sCREENrOUGH.png" id="4_i3wgj"]
+[ext_resource type="Texture2D" uid="uid://b0xh6iwssko7m" path="res://Assets/sCREENrOUGH.png" id="4_i3wgj"]
+[ext_resource type="Script" path="res://Scripts/turn_off_effect.gd" id="7_12clb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1epx"]
 size = Vector3(1.59668, 1.14062, 1.6377)
@@ -148,8 +150,51 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_28tfp")
 
+[sub_resource type="Shader" id="Shader_8mduw"]
+code = "shader_type canvas_item;
+
+uniform float effect_radius = 0.5;
+uniform float effect_bluryness = 0.2;
+
+uniform float white_thickness = 0.1;
+uniform float white_bluryness = 0.1;
+
+const vec2 screen_center = vec2(0.5);
+const vec2 aspect = vec2(1., 2.);
+
+float circle(vec2 uv, float radius, float bluryness) {
+	vec2 dist = uv - (screen_center * aspect);
+	return smoothstep(radius-(radius*bluryness),radius+(radius*bluryness),dot(dist,dist)*4.0);
+}
+
+void fragment() {
+	vec2 uv = UV * aspect;
+	float effect_circle = circle(uv, effect_radius, effect_bluryness);
+	float min_effect_radius = max(0.0, effect_radius - white_thickness);
+	float white_circle = circle(uv, min_effect_radius, white_bluryness);
+	vec3 white_color = vec3(white_circle);
+	vec3 black_color = vec3(effect_circle);
+	vec3 result = white_color - black_color;
+	COLOR = vec4(result, white_circle);
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkodx"]
+resource_local_to_scene = true
+shader = SubResource("Shader_8mduw")
+shader_parameter/effect_radius = 6.0
+shader_parameter/effect_bluryness = 0.5
+shader_parameter/white_thickness = 0.2
+shader_parameter/white_bluryness = 0.3
+
 [node name="Monitor" type="StaticBody3D"]
 script = ExtResource("1_6i2me")
+turn_off_audio = ExtResource("2_d5y0q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29834, 0.00510526, 0)
@@ -205,3 +250,13 @@ transparent_bg = true
 size = Vector2i(640, 480)
 
 [node name="StockUI" parent="SubViewport" instance=ExtResource("3_e8ho8")]
+
+[node name="TurnOff" type="ColorRect" parent="SubViewport"]
+material = SubResource("ShaderMaterial_wkodx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("7_12clb")

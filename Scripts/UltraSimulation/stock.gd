@@ -23,7 +23,7 @@ var growth_index: float = 1.5
 var decline_index: float = 0.5
 
 var unit_difference: float
-var price_growth_per_difference: float = 0.
+var growth_per_stock: float = 0.01
 
 
 func _init(name: StringName) -> void:

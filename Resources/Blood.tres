@@ -6,9 +6,11 @@
 script = ExtResource("1_6iuuu")
 name = &"Blood"
 earnings = 8.0
-_earnings_growth = 0.12
-_earnings_decline = 0.069
+_earnings_growth = 0.01
+_earnings_decline = 0.005
 overevaluation_bias = 40.0
-stock_price = 120
-_price_growth = 4
-_price_decline = 2
+stock_price = 20.0
+_price_growth = 2.0
+_price_decline = 1.0
+growth_per_stock = 0.01
+decline_per_stock = 0.02

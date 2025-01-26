@@ -1,6 +1,9 @@
 class_name StockSimulated
 extends Resource
 
+signal stock_died
+signal stock_updated
+
 enum State {
 	NORMAL,
 	RUPTURE
@@ -19,6 +22,8 @@ var MAX_HISTORY := 20
 @export var stock_price: float = 100
 @export var _price_growth: float = 2
 @export var _price_decline: float = 1
+@export var growth_per_stock: float = 0.001
+@export var decline_per_stock: float = 0.002
 
 var stock_owned: int = 0
 
@@ -42,8 +47,10 @@ func update() -> void:
 	elif _state == State.RUPTURE:
 		stock_price -= randf_range(_price_decline, _price_decline + _price_growth)
 		earnings -= randf_range(_earnings_decline, _earnings_decline + _earnings_growth)
-		if stock_price < 0:
+		if stock_price <= 0:
 			stock_price = 0
+			stock_died.emit()
+			
 		buy_price = stock_price * randf_range(1.0, 1.1)
 		sell_price = stock_price * randf_range(0.9, 1.0)
 			# should notify that it died
@@ -55,17 +62,21 @@ func update() -> void:
 	evaluation = stock_price / earnings
 	if evaluation > overevaluation_bias:
 		_state = State.RUPTURE
+	
+	stock_updated.emit()
 
 
 func buy_stock(capital: int) -> int:
-	if capital > buy_price:
+	if capital > buy_price and buy_price > 0:
 		capital -= buy_price
 		stock_owned += 1
+		stock_price += growth_per_stock * _price_growth * stock_owned
 	return capital
 
 
 func sell_stock(capital: int) -> int:
-	if stock_owned > 0:
+	if stock_owned > 0 and buy_price > 0:
 		stock_owned -= 1
 		capital += sell_price
+		stock_price -= decline_per_stock * _price_decline * stock_owned
 	return capital
