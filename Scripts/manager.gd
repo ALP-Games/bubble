@@ -30,6 +30,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	process_ambient_sounds.call(delta)
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
+		#get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 
 
 func _process_ambient_sound(delta: float) -> void:
