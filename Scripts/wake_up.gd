@@ -21,3 +21,7 @@ func _process(delta: float) -> void:
 
 func _update_shader(radius: float) -> void:
 	(material as ShaderMaterial).set_shader_parameter("radius", radius)
+
+
+func set_radius(radius: float) -> void:
+	(material as ShaderMaterial).set_shader_parameter("radius", radius)

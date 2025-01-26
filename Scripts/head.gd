@@ -6,23 +6,40 @@ extends Node3D
 @onready var parent := get_parent()
 
 
-var handle_input_callable: Callable = func(event: InputEvent)->void:pass
+var handle_input_callable: Callable = _nothing
 
 
 #TODO export this
 const SENSTIVITY: float = 0.003 # has to be modifiable in settings
 
 
+func _nothing(event: InputEvent) -> void:
+	pass
+
+
 func _ready() -> void:
+	game_manager.gameplay_instance.game_over_sequence_start.connect(func()->void:
+		handle_input_callable = _handle_up_and_down)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	game_manager.player_instance.ready.connect(func()->void:
 		var enable_input := create_tween()
-		enable_input.tween_callback(func()->void:handle_input_callable = _handle_mouse_input).set_delay(game_manager.player_instance.wake_up.delay))
+		enable_input.tween_callback(func()->void:handle_input_callable = _handle_mouse_input).\
+			set_delay(game_manager.player_instance.wake_up.delay))
 	
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	handle_input_callable.call(event)
+
+
+func _handle_up_and_down(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		var rotation = -event.relative * SENSTIVITY
+		if head_max_rotation_units.y > 0:
+			rotate_x(clamp(rotation.y, -head_max_rotation_units.y, head_max_rotation_units.y))
+		else:
+			rotate_x(rotation.y)
+		self.rotation.x = clamp(self.rotation.x, -max_pitch_degrees, max_pitch_degrees)
 
 
 func _handle_mouse_input(event: InputEvent) -> void:

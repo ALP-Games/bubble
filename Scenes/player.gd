@@ -12,6 +12,10 @@ func _enter_tree() -> void:
 	game_manager.player_instance = self
 
 
+func _ready() -> void:
+	game_manager.gameplay_instance.the_end.connect(wake_up.set_radius.bind(0.0))
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

@@ -21,7 +21,7 @@ var month_counter: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	game_manager.gameplay_instance.clock_interval
+	game_manager.gameplay_instance.the_end.connect(func():game_manager.gameplay_instance.clock_tick.disconnect(_tick))
 	game_manager.gameplay_instance.clock_tick.connect(_tick)
 	_set_year()
 	_rotate_dial()

@@ -3,6 +3,8 @@ extends Node
 
 signal capital_changed(int)
 signal clock_tick
+signal game_over_sequence_start
+signal the_end
 
 # Stock Name and Target monitor
 @export var capital: int = 100000000:
@@ -15,6 +17,7 @@ signal clock_tick
 
 @export var bubble: Node3D
 @export var bubble_growth_sound: AudioStreamOggVorbis
+@export var bubble_pop_sound: AudioStreamOggVorbis
 @export var bubble_size_increment: float = 0.45:
 	set(value):
 		_bubble_growth = Vector3(value, value, value)
@@ -37,9 +40,13 @@ var dead_stock_queue: Array[StockSimulated]
 # Proto | Infra
 
 
+func _enter_tree() -> void:
+	game_manager.gameplay_instance = self
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	game_manager.gameplay_instance = self
+	the_end.connect(_play_sound_at_bubble.bind(bubble_pop_sound))
 	var initial_owned_stocks: Dictionary
 	for key in stock_configuration:
 		var configuration := stock_configuration[key] as Dictionary
@@ -72,6 +79,8 @@ func _process(delta):
 var bubble_tween: Tween = null
 
 func _process_dead_stock_queue() -> void:
+	if stocks.is_empty():
+		_game_over_sequence()
 	if dead_stock_queue.size() < 1:
 		return
 	if bubble_tween != null:
@@ -81,20 +90,36 @@ func _process_dead_stock_queue() -> void:
 	bubble_tween.tween_property(bubble, "scale", bubble.scale + _bubble_growth, bubble_growth_sound.get_length())
 	bubble_tween.tween_callback(func()->void:
 		dead_stock_queue.pop_back()
-		bubble_tween = null)
-	_play_bubble_sound()
+		bubble_tween = null
+		if stocks.is_empty():
+			the_end.emit())
+	if not stocks.is_empty():
+		_play_sound_at_bubble(bubble_growth_sound)
 
 
-func _play_bubble_sound() -> void:
+func _play_sound_at_bubble(sound: AudioStreamOggVorbis) -> void:
 	var audio := AudioStreamPlayer3D.new()
 	audio.global_transform = bubble.global_transform
 	bubble.add_child(audio)
-	audio.stream = bubble_growth_sound
+	audio.stream = sound
 	audio.play()
+	var kill = func(steam_player: AudioStreamPlayer3D)->void:
+		steam_player.stop()
+		steam_player.queue_free()
 	audio.finished.connect(func()->void:
-		audio.queue_free())
+		the_end.disconnect(kill))
+	audio.finished.connect(kill.bind(audio))
+	the_end.connect(kill.bind(audio))
 
 #var bubble_tween
+func _game_over_sequence() -> void:
+	game_over_sequence_start.emit()
+	var direction = (bubble.global_position - game_manager.player_instance.global_position).normalized()
+	var rotation := game_manager.player_instance.global_rotation
+	var target_angle := direction.angle_to(Vector3.FORWARD)
+	var rotate_tween := create_tween()
+	rotate_tween.tween_property(game_manager.player_instance, "global_rotation:y", target_angle, 1.0)
+	#game_manager.player_instance.look_at(bubble.global_position)
 
 
 func _on_stock_died(stock: StockSimulated) -> void:

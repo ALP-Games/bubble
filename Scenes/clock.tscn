@@ -94,6 +94,7 @@ shadow_mesh = SubResource("ArrayMesh_ndqq2")
 [node name="Clock2" instance=ExtResource("1_p5enr")]
 script = ExtResource("2_8fyi3")
 tick_sounds = Array[AudioStreamOggVorbis]([ExtResource("3_m5005"), ExtResource("4_envx1"), ExtResource("5_qbxhn"), ExtResource("6_f7hi7"), ExtResource("7_p2bdi"), ExtResource("8_b3ymj")])
+year = 2999
 
 [node name="Months" type="Node3D" parent="Clock" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.11504)
