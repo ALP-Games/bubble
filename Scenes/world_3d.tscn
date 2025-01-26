@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=24 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
 [ext_resource type="Script" path="res://Scripts/blind_before_load.gd" id="1_kr675"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c5ahu0q71t825" path="res://Assets/Pipe01.glb" id="9_42xta"]
 [ext_resource type="Resource" uid="uid://5awjv0rwuusw" path="res://Resources/Shlamantese.tres" id="9_m5au0"]
 [ext_resource type="Resource" uid="uid://bdadi8yidmb6j" path="res://Resources/Blood.tres" id="10_6m4jd"]
+[ext_resource type="AudioStream" uid="uid://c466msj6cyb6u" path="res://Audio/Misc/Bubble.ogg" id="12_mki24"]
 [ext_resource type="PackedScene" uid="uid://bt8c1fpurativ" path="res://Scenes/Bubble.tscn" id="14_2wil5"]
 [ext_resource type="PackedScene" uid="uid://cdvpbpne0cblk" path="res://Scenes/clock.tscn" id="16_7cqld"]
 [ext_resource type="PackedScene" uid="uid://ct5nu8mrdot8g" path="res://Scenes/money_counter.tscn" id="20_84g2k"]
@@ -115,7 +116,7 @@ transform = Transform3D(0.719109, 0, 0.694897, 0, 1, 0, -0.694897, 0, 0.719109, 
 [node name="Monitor6" parent="." instance=ExtResource("3_qc2cn")]
 transform = Transform3D(0.590037, -0.411065, 0.694897, 0.57163, 0.820511, -6.75542e-08, -0.570171, 0.397224, 0.71911, 3.80402, 5.23609, -2.34476)
 
-[node name="Gameplay" type="Node" parent="."]
+[node name="Gameplay" type="Node" parent="." node_paths=PackedStringArray("bubble")]
 script = ExtResource("4_y6it0")
 capital = 1000000
 stock_configuration = {
@@ -131,19 +132,21 @@ stock_configuration = {
 "Monitor": NodePath("../Monitor"),
 "Stock": ExtResource("5_u8gkb")
 },
+"Detcla": {
+"Monitor": NodePath("../Monitor4"),
+"Stock": ExtResource("8_aas88")
+},
 "Infra": {
 "Monitor": NodePath("../Monitor3"),
 "Stock": ExtResource("7_474sp")
-},
-"Saw Bladez": {
-"Monitor": NodePath("../Monitor4"),
-"Stock": ExtResource("8_aas88")
 },
 "Shlamantese": {
 "Monitor": NodePath("../Monitor5"),
 "Stock": ExtResource("9_m5au0")
 }
 }
+bubble = NodePath("../Bubble2")
+bubble_growth_sound = ExtResource("12_mki24")
 
 [node name="Player" parent="." instance=ExtResource("1_3xj3b")]
 transform = Transform3D(0.186764, 0, -0.982405, 0, 1, 0, 0.982405, 0, 0.186764, 2.41919, 2.91376, 0)
