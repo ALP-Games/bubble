@@ -13,7 +13,9 @@ config_version=5
 config/name="Bubblenomics"
 run/main_scene="res://Scenes/scene_manager.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://Icon/BubblenomicsNAME.png"
+config/icon="res://Bubblenomics.png"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
