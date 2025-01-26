@@ -1,8 +1,13 @@
 class_name Manager
 extends Node
 
-var gameplay_instance: Gameplay = null
+signal player_set
 
+var player_instance: Player = null:
+	set(value):
+		player_instance = value
+		player_set.emit()
+var gameplay_instance: Gameplay = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

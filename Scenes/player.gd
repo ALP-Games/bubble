@@ -5,11 +5,11 @@ extends Node3D
 
 @onready var raycast := $Head/Eyes/RayCast3D
 @onready var crosshair_ui := $SubViewport/PlayerCharacterUI
+@onready var wake_up := $SubViewport/wake_up
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _enter_tree() -> void:
+	game_manager.player_instance = self
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
