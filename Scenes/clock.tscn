@@ -1,8 +1,15 @@
-[gd_scene load_steps=10 format=4 uid="uid://cdvpbpne0cblk"]
+[gd_scene load_steps=17 format=4 uid="uid://cdvpbpne0cblk"]
 
-[ext_resource type="PackedScene" uid="uid://cy3jaxfdosn5o" path="res://Assets/Counters/Clock.glb" id="1_p5enr"]
-[ext_resource type="Texture2D" uid="uid://dsigh0xq32xj0" path="res://Assets/Counters/Months_Ucupaint Cylinder.png" id="2_ilms3"]
-[ext_resource type="Texture2D" uid="uid://dnxsnu2j81c6c" path="res://Assets/Counters/Numbers_Ucupaint Cylinder Color.png" id="3_rd15w"]
+[ext_resource type="PackedScene" uid="uid://dxyx28w14q71r" path="res://Assets/Counters/Clock.glb" id="1_p5enr"]
+[ext_resource type="Script" path="res://Scripts/clock.gd" id="2_8fyi3"]
+[ext_resource type="Texture2D" uid="uid://cyam6hbkq4vu5" path="res://Assets/Counters/Months_Ucupaint Cylinder.png" id="2_ilms3"]
+[ext_resource type="AudioStream" uid="uid://dv2ibemwarrnr" path="res://Audio/DeepTickSound/Tick01.ogg" id="3_m5005"]
+[ext_resource type="Texture2D" uid="uid://b3ja31j0qfu7s" path="res://Assets/Counters/Numbers_Ucupaint Cylinder Color.png" id="3_rd15w"]
+[ext_resource type="AudioStream" uid="uid://dapnvl08p68qq" path="res://Audio/DeepTickSound/Tick02.ogg" id="4_envx1"]
+[ext_resource type="AudioStream" uid="uid://wfnaapovvsot" path="res://Audio/DeepTickSound/Tick03.ogg" id="5_qbxhn"]
+[ext_resource type="AudioStream" uid="uid://cf8jxilhgso5l" path="res://Audio/DeepTickSound/Tick04.ogg" id="6_f7hi7"]
+[ext_resource type="AudioStream" uid="uid://c8japk3likhro" path="res://Audio/DeepTickSound/Tick05.ogg" id="7_p2bdi"]
+[ext_resource type="AudioStream" uid="uid://chrdntvdgmg2r" path="res://Audio/DeepTickSound/Tick06.ogg" id="8_b3ymj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tqkr"]
 resource_name = "Cylinder.002"
@@ -85,11 +92,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ndqq2")
 
 [node name="Clock2" instance=ExtResource("1_p5enr")]
+script = ExtResource("2_8fyi3")
+tick_sounds = Array[AudioStreamOggVorbis]([ExtResource("3_m5005"), ExtResource("4_envx1"), ExtResource("5_qbxhn"), ExtResource("6_f7hi7"), ExtResource("7_p2bdi"), ExtResource("8_b3ymj")])
 
-[node name="Months2" type="Node3D" parent="Clock" index="0"]
+[node name="Months" type="Node3D" parent="Clock" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.11504)
 
-[node name="Months" type="MeshInstance3D" parent="Clock/Months2" index="0"]
+[node name="Months" type="MeshInstance3D" parent="Clock/Months" index="0"]
 transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_2cy5f")
 skeleton = NodePath("")

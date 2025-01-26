@@ -2,6 +2,7 @@ class_name Gameplay
 extends Node
 
 signal capital_changed(int)
+signal clock_tick
 
 # Stock Name and Target monitor
 @export var capital: int = 100000000:
@@ -10,9 +11,11 @@ signal capital_changed(int)
 		capital_changed.emit(capital)
 @export var stock_configuration: Dictionary
 @export var tick_delay: float = 1.0
+@export var clock_interval: float = 1.0
 
 #var participant_delay
 var elapsed_time: float = 0
+var clock_time_elasped: float = 0
 
 var stocks: Array[StockSimulated] = []
 
@@ -42,6 +45,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	clock_time_elasped += delta
+	if clock_time_elasped >= clock_interval:
+		clock_time_elasped -= clock_interval
+		clock_tick.emit()
+	
 	elapsed_time += delta
 	if elapsed_time < tick_delay:
 		return
