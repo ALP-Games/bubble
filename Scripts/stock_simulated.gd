@@ -1,6 +1,8 @@
 class_name StockSimulated
 extends Resource
 
+signal stock_died
+
 enum State {
 	NORMAL,
 	RUPTURE
@@ -44,8 +46,10 @@ func update() -> void:
 	elif _state == State.RUPTURE:
 		stock_price -= randf_range(_price_decline, _price_decline + _price_growth)
 		earnings -= randf_range(_earnings_decline, _earnings_decline + _earnings_growth)
-		if stock_price < 0:
+		if stock_price <= 0:
 			stock_price = 0
+			stock_died.emit()
+			
 		buy_price = stock_price * randf_range(1.0, 1.1)
 		sell_price = stock_price * randf_range(0.9, 1.0)
 			# should notify that it died

@@ -11,11 +11,16 @@ func set_stock_name(name: StringName) -> void:
 
 func set_stock_ref(stock: StockSimulated) -> void:
 	stock_ref = stock
+	stock_ref.stock_died.connect(_on_stock_died)
+
+
+func _on_stock_died() -> void:
+	$SubViewport/TurnOff.turn_off()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
