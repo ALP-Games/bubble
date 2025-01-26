@@ -52,7 +52,7 @@ func _ready():
 	for key in stock_configuration:
 		var configuration := stock_configuration[key] as Dictionary
 		var monitor := get_node(configuration["Monitor"]) as Monitor
-		var stock := configuration["Stock"] as StockSimulated
+		var stock := (configuration["Stock"] as StockSimulated).duplicate()
 		stock.stock_died.connect(_on_stock_died.bind(stock))
 		stocks.append(stock)
 		monitor.set_stock_name(key)
@@ -95,7 +95,7 @@ func _process_dead_stock_queue() -> void:
 		bubble_tween = null
 		if stocks.is_empty():
 			the_end.emit())
-	if not stocks.is_empty() and dead_stock_queue.is_empty():
+	if not stocks.is_empty() and not dead_stock_queue.is_empty():
 		_play_sound_at_bubble(bubble_growth_sound)
 
 

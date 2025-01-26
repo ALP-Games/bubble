@@ -14,6 +14,7 @@ exposure_multiplier = 0.747
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gd25j"]
+resource_local_to_scene = true
 shader = ExtResource("5_bx1pw")
 shader_parameter/radius = 0.0
 shader_parameter/bluryness = 0.75
