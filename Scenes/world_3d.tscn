@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=23 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
 [ext_resource type="Script" path="res://Scripts/blind_before_load.gd" id="1_kr675"]
+[ext_resource type="PackedScene" uid="uid://b6wbrumtuyc26" path="res://Scenes/ambient_buzz.tscn" id="1_yonry"]
 [ext_resource type="PackedScene" uid="uid://c1kbkxe0dic6f" path="res://Assets/Blockout.glb" id="2_dmqej"]
 [ext_resource type="PackedScene" uid="uid://ddri64sk3ke7j" path="res://Scenes/monitor.tscn" id="3_qc2cn"]
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="4_y6it0"]
@@ -43,6 +44,9 @@ adjustment_saturation = 1.09
 adjustment_color_correction = SubResource("GradientTexture2D_uxmfw")
 
 [node name="World3D" type="Node3D"]
+
+[node name="AmbientBuzz" parent="." instance=ExtResource("1_yonry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76006, 4.26981, 0)
 
 [node name="BlindBeforeLoad" type="Control" parent="."]
 layout_mode = 3

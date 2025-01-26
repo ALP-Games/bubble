@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=4 uid="uid://ddri64sk3ke7j"]
+[gd_scene load_steps=22 format=4 uid="uid://ddri64sk3ke7j"]
 
 [ext_resource type="Texture2D" uid="uid://dfduokpwwu1bk" path="res://Assets/MonitorRig_Ucupaint Cube.png" id="1_4gx2q"]
 [ext_resource type="Script" path="res://Scripts/monitor.gd" id="1_6i2me"]
+[ext_resource type="AudioStream" uid="uid://cpo2iwnh03a8x" path="res://Audio/TvSounds/Turnoff .ogg" id="2_d5y0q"]
 [ext_resource type="Texture2D" uid="uid://bdoemfwxa2t8b" path="res://Assets/MonitorRig_Ucupaint Cube_1.png" id="2_hd7o4"]
 [ext_resource type="PackedScene" uid="uid://c8bmfd2hy7x7g" path="res://UI/stock_ui.tscn" id="3_e8ho8"]
 [ext_resource type="Texture2D" uid="uid://b0xh6iwssko7m" path="res://Assets/sCREENrOUGH.png" id="4_i3wgj"]
@@ -193,6 +194,7 @@ shader_parameter/white_bluryness = 0.3
 
 [node name="Monitor" type="StaticBody3D"]
 script = ExtResource("1_6i2me")
+turn_off_audio = ExtResource("2_d5y0q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29834, 0.00510526, 0)

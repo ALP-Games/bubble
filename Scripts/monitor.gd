@@ -1,6 +1,8 @@
 class_name Monitor
 extends Node3D
 
+@export var turn_off_audio: AudioStreamOggVorbis
+
 @onready var stock_ui := $SubViewport/StockUI
 var stock_ref: StockSimulated
 
@@ -15,7 +17,19 @@ func set_stock_ref(stock: StockSimulated) -> void:
 
 
 func _on_stock_died() -> void:
+	stock_ref.stock_died.disconnect(_on_stock_died)
+	_play_turn_off_sound()
 	$SubViewport/TurnOff.turn_off()
+
+
+func _play_turn_off_sound() -> void:
+	var audio := AudioStreamPlayer3D.new()
+	add_child(audio)
+	audio.stream = turn_off_audio
+	var audio_tween := create_tween()
+	audio_tween.tween_callback(func()->void: audio.play())
+	audio.finished.connect(func()->void:
+		audio.queue_free())
 
 
 # Called when the node enters the scene tree for the first time.
