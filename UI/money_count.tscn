@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dilwk2ahdrnn3"]
+
+[ext_resource type="FontFile" uid="uid://d3xs0arxy2dqm" path="res://UI/7segment.ttf" id="1_u4bwh"]
+
+[sub_resource type="FontVariation" id="FontVariation_2w75e"]
+base_font = ExtResource("1_u4bwh")
+spacing_glyph = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_kaaqd"]
+resource_name = "Money_count_settings"
+font = SubResource("FontVariation_2w75e")
+font_size = 51
+
+[node name="MoneyDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.72, 0.72)
+pivot_offset = Vector2(256, 256)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 130.766
+offset_top = 10.441
+offset_right = 130.766
+offset_bottom = 10.441
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="MoneyCountNum" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0888888889"
+label_settings = SubResource("LabelSettings_kaaqd")

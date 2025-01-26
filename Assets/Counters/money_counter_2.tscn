@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct5nu8mrdot8g"]
+
+[ext_resource type="PackedScene" uid="uid://c1u4xny6pu6rm" path="res://Assets/Counters/MoneyCounter.glb" id="1_8xwgr"]
+[ext_resource type="PackedScene" uid="uid://dilwk2ahdrnn3" path="res://UI/money_count.tscn" id="2_1hvo2"]
+[ext_resource type="Material" uid="uid://cm5nswf5l88ux" path="res://Assets/Counters/money_counter_2.tres" id="2_idsjd"]
+
+[node name="MoneyCounter2" instance=ExtResource("1_8xwgr")]
+
+[node name="MoneyCounter" parent="." index="0"]
+surface_material_override/1 = ExtResource("2_idsjd")
+
+[node name="SubViewport" type="SubViewport" parent="." index="1"]
+transparent_bg = true
+size = Vector2i(275, 256)
+
+[node name="Control" parent="SubViewport" index="0" instance=ExtResource("2_1hvo2")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
