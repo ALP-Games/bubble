@@ -1,0 +1,13 @@
+[gd_scene load_steps=7 format=3 uid="uid://byfq07x25vwu1"]
+
+[ext_resource type="Script" path="res://Scripts/ambient_sound.gd" id="1_2f520"]
+[ext_resource type="AudioStream" uid="uid://cc8usr4qhhumk" path="res://Audio/MetalCreeking/MetalCreek1.ogg" id="2_k1erg"]
+[ext_resource type="AudioStream" uid="uid://ghw4gehqxrt4" path="res://Audio/MetalCreeking/MetalCreek2.ogg" id="3_6jura"]
+[ext_resource type="AudioStream" uid="uid://bjgkb4ixbaa3y" path="res://Audio/MetalCreeking/MetalCreek3.ogg" id="4_uyt1v"]
+[ext_resource type="AudioStream" uid="uid://cwx8q2y81aalt" path="res://Audio/MetalCreeking/MetalCreek4.ogg" id="5_5b3cq"]
+[ext_resource type="AudioStream" uid="uid://dbwp5x4pusyj0" path="res://Audio/MetalCreeking/MetalCreek5.ogg" id="6_ffck3"]
+
+[node name="AmbientSound" type="AudioStreamPlayer3D"]
+attenuation_model = 3
+script = ExtResource("1_2f520")
+ambient_sounds = Array[AudioStreamOggVorbis]([ExtResource("2_k1erg"), ExtResource("3_6jura"), ExtResource("4_uyt1v"), ExtResource("5_5b3cq"), ExtResource("6_ffck3")])

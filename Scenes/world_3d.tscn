@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dbqqdupnvapvi"]
+[gd_scene load_steps=25 format=3 uid="uid://dbqqdupnvapvi"]
 
 [ext_resource type="PackedScene" uid="uid://d4ek7o4r32c2" path="res://Scenes/player.tscn" id="1_3xj3b"]
 [ext_resource type="Script" path="res://Scripts/blind_before_load.gd" id="1_kr675"]
@@ -16,10 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://c5ahu0q71t825" path="res://Assets/Pipe01.glb" id="9_42xta"]
 [ext_resource type="Resource" uid="uid://5awjv0rwuusw" path="res://Resources/Shlamantese.tres" id="9_m5au0"]
 [ext_resource type="Resource" uid="uid://bdadi8yidmb6j" path="res://Resources/Blood.tres" id="10_6m4jd"]
+[ext_resource type="AudioStream" uid="uid://c466msj6cyb6u" path="res://Audio/Misc/Bubble.ogg" id="12_mki24"]
 [ext_resource type="PackedScene" uid="uid://bt8c1fpurativ" path="res://Scenes/Bubble.tscn" id="14_2wil5"]
 [ext_resource type="PackedScene" uid="uid://cdvpbpne0cblk" path="res://Scenes/clock.tscn" id="16_7cqld"]
 [ext_resource type="PackedScene" uid="uid://ct5nu8mrdot8g" path="res://Scenes/money_counter.tscn" id="20_84g2k"]
-[ext_resource type="PackedScene" uid="uid://dan1w8nyb0mod" path="res://UI/gameEnd.tscn" id="20_jgs4s"]
+[ext_resource type="PackedScene" uid="uid://byfq07x25vwu1" path="res://Scenes/ambient_sound.tscn" id="21_74oln"]
 
 [sub_resource type="Gradient" id="Gradient_w4xwo"]
 colors = PackedColorArray(0.00077429, 0.0137135, 0.021352, 1, 0.695969, 0.97672, 0.738921, 1)
@@ -116,7 +117,7 @@ transform = Transform3D(0.719109, 0, 0.694897, 0, 1, 0, -0.694897, 0, 0.719109, 
 [node name="Monitor6" parent="." instance=ExtResource("3_qc2cn")]
 transform = Transform3D(0.590037, -0.411065, 0.694897, 0.57163, 0.820511, -6.75542e-08, -0.570171, 0.397224, 0.71911, 3.80402, 5.23609, -2.34476)
 
-[node name="Gameplay" type="Node" parent="."]
+[node name="Gameplay" type="Node" parent="." node_paths=PackedStringArray("bubble")]
 script = ExtResource("4_y6it0")
 capital = 1000000
 stock_configuration = {
@@ -132,19 +133,21 @@ stock_configuration = {
 "Monitor": NodePath("../Monitor"),
 "Stock": ExtResource("5_u8gkb")
 },
+"Detcla": {
+"Monitor": NodePath("../Monitor4"),
+"Stock": ExtResource("8_aas88")
+},
 "Infra": {
 "Monitor": NodePath("../Monitor3"),
 "Stock": ExtResource("7_474sp")
-},
-"Saw Bladez": {
-"Monitor": NodePath("../Monitor4"),
-"Stock": ExtResource("8_aas88")
 },
 "Shlamantese": {
 "Monitor": NodePath("../Monitor5"),
 "Stock": ExtResource("9_m5au0")
 }
 }
+bubble = NodePath("../Bubble2")
+bubble_growth_sound = ExtResource("12_mki24")
 
 [node name="Player" parent="." instance=ExtResource("1_3xj3b")]
 transform = Transform3D(0.186764, 0, -0.982405, 0, 1, 0, 0.982405, 0, 0.186764, 2.41919, 2.91376, 0)
@@ -217,4 +220,22 @@ transform = Transform3D(0.87998, 0.204049, 0.428951, -0.225886, 0.974154, -1.404
 [node name="MoneyCounter" parent="." instance=ExtResource("20_84g2k")]
 transform = Transform3D(0.880462, 0.319313, -0.350464, -0.34405, 0.938909, -0.00889366, 0.326214, 0.128408, 0.936534, 4.56883, 1.80145, 0.799381)
 
-[node name="gameOver" parent="." instance=ExtResource("20_jgs4s")]
+[node name="AmbientSounds" type="Node3D" parent="."]
+
+[node name="AmbientSound" parent="AmbientSounds" instance=ExtResource("21_74oln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87174, 2.84615, -4.23558)
+
+[node name="AmbientSound2" parent="AmbientSounds" instance=ExtResource("21_74oln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58887, 2.84615, 6.43444)
+
+[node name="AmbientSound3" parent="AmbientSounds" instance=ExtResource("21_74oln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45841, 2.84615, 0.448067)
+
+[node name="AmbientSound4" parent="AmbientSounds" instance=ExtResource("21_74oln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07576, 2.84615, 3.47466)
+
+[node name="AmbientSound5" parent="AmbientSounds" instance=ExtResource("21_74oln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52328, 2.84615, -4.11229)
+
+[node name="AmbientSound6" parent="AmbientSounds" instance=ExtResource("21_74oln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99274, 2.84615, 4.94669)

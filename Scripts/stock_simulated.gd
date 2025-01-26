@@ -2,6 +2,7 @@ class_name StockSimulated
 extends Resource
 
 signal stock_died
+signal stock_updated
 
 enum State {
 	NORMAL,
@@ -61,6 +62,8 @@ func update() -> void:
 	evaluation = stock_price / earnings
 	if evaluation > overevaluation_bias:
 		_state = State.RUPTURE
+	
+	stock_updated.emit()
 
 
 func buy_stock(capital: int) -> int:
